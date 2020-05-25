@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="39c7f70936e4417f9652c124ded97d66" Name="Diagram1">
+        <EntityTypeShape EntityType="almacen_avance2Model.Almacen" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="almacen_avance2Model.Camaras" Width="1.5" PointX="8.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="almacen_avance2Model.Cliente" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="almacen_avance2Model.Detalle_venta" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="almacen_avance2Model.Pago" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="almacen_avance2Model.Producto" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="almacen_avance2Model.Reportes" Width="1.5" PointX="10.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="almacen_avance2Model.Rol" Width="1.5" PointX="3.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="almacen_avance2Model.sysdiagrams" Width="1.5" PointX="2.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="almacen_avance2Model.Tipo_pago" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="almacen_avance2Model.Usuario" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="almacen_avance2Model.Venta" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Detalle_v__id_al__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Reportes__id_alm__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Camaras__id_rol__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Camaras__id_usua__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Detalle_v__numer__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Pago__numero_cli__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Venta__numero_cl__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Detalle_v__id_pr__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Detalle_v__id_ti__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Detalle_v__id_ve__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Pago__id_tipo_pa__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Venta__id_pago__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Reportes__id_usu__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Reportes__id_ven__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Usuario__id_rol__145C0A3F" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Venta__id_usuari__21B6055D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

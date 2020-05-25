@@ -1,0 +1,60 @@
+﻿/*BANNER*/
+#banner {
+    width: 95.5%;
+    height: 100px;
+    background: url(../img/bakbaner.png);
+    background-position: -200px -200px;
+    margin: 20px auto;
+    animation: backBanner 10s linear;
+    overflow: hidden;
+    position: relative;
+    top:100px;
+}
+
+@keyframes backBanner {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: -200px -200px;
+    }
+}
+
+#banner h1 {
+    display: block;
+    width:100%;
+    font-family: "BebasNeue";
+    color: #333;
+    font-size: 55px;
+    text-align:center;
+    letter-spacing: 10px;
+    margin: 0px auto;
+    font-weight: normal;
+    text-shadow: 2px 2px 1px black;
+    animation: showText 10s linear;
+}
+
+@keyframes showText {
+    0% {
+        transform: translateX(-600%) scale(2,2);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(600%) scale(2,2);
+        opacity: 1;
+    }
+
+    75% {
+        transform: translateX(-600%) scale(2,2);
+        opacity: 0;
+        text-shadow: none;
+        color: transparent;
+    }
+
+    100% {
+        transform: translateX(0%) scale(1,1);
+        opacity: 1;
+    }
+}
