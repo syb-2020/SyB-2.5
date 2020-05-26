@@ -93,7 +93,7 @@ Las reglas, diagramaciones y funciones de la base de datos se mostrarán dentro 
   6.	Una vez realizado todo lo anterior, procederemos a ejecutar el proyecto, ejecutando el archivo Default.aspx en la carpeta Raíz del proyecto. Nos cargará el inicio de sesión en el cual podrá ingresar con los datos Insertados y creados en la base de datos, en este caso existen dos usuarios posibles a iniciar, Administrador y Trabajador con sus respectivos módulos desarrollados y posteriormente a desarrollarse.
     
     Usuario Administrador
-    Usuario: guille1@gmail.cl		Contraseña: 1234
+    Usuario: guille1@gmail.cl	Contraseña: 1234
 
     Usuario Trabajador
     Usuario: mario@gmail.cl		Contraseña: 1234
