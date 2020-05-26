@@ -5,16 +5,16 @@ Sistema de gestión de ventas, productos y usuarios, basado en el lenguaje de pr
 Los archivos dentro de este sistema son los siguientes
 La arquitectura del proyecto está basada en el Modelo Vista-Controlador "MVC". Además de contar con el tema AdminLTE Version 2.0 el cual ya viene prefijo con sus versiones modificadas de Font Awesome 5.2.0 y Boostrap 4.
 Dentro del proyecto encontrara las siguientes carpetas: 
-    •	Content: Carpeta contenedora de componentes de Bootstrap.
-    •	Img: Carpeta contenedora de las imágenes utilizadas en el proyecto
-    •	Model: Carpeta contenedora sobre la Base de datos, utilizando Entity Framework (EF) apuntando a una base de datos existente.
-    •	Scripts: Carpeta contenedora de códigos JavaScript usados para darle interactividad y funcionalidad al sistema.
-    •	Views: Carpeta contenedora dentro con las plantillas Máster del administrador y trabajador, con sus correspondientes vistas y/o 
-    módulos, y sus controladores.
-    •	Bower_components: Carpeta contenedora de componentes propios del tema AdminLTE en su versión 2.0.
-    •	Dist: Carpeta contenedora de componentes propios del tema AdminLTE en su versión 2.0.
-    •	Fonts: Carpeta contenedora de las fuentes utilizadas en el sistema.
-    •	Plugins: Carpeta contenedora de componentes propios del tema AdminLTE en su versión 2.0.
+    1.	Content: Carpeta contenedora de componentes de Bootstrap.
+    2.	Img: Carpeta contenedora de las imágenes utilizadas en el proyecto
+    3.	Model: Carpeta contenedora sobre la Base de datos, utilizando Entity Framework (EF) apuntando a una base de datos existente.
+    4.	Scripts: Carpeta contenedora de códigos JavaScript usados para darle interactividad y funcionalidad al sistema.
+    5.	Views: Carpeta contenedora dentro con las plantillas Máster del administrador y trabajador, con sus correspondientes vistas y/o módulos, y sus controladores.
+    6.	Bower_components: Carpeta contenedora de componentes propios del tema AdminLTE en su versión 2.0.
+    7.	Dist: Carpeta contenedora de componentes propios del tema AdminLTE en su versión 2.0.
+    8.	Fonts: Carpeta contenedora de las fuentes utilizadas en el sistema.
+    9.	Plugins: Carpeta contenedora de componentes propios del tema AdminLTE en su versión 2.0.
+
     
     
 # Base de Datos
