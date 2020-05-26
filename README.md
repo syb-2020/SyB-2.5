@@ -36,7 +36,7 @@ Las reglas, diagramaciones y funciones de la base de datos se mostrarán dentro 
   
   2.	Instalar todas las herramientas necesarias como dicta en las recomendaciones.
   
-  3.	Descargar archivo de la base de datos.
+  3.	Descargar archivo de la base de datos llamado "almacen_avance2.sql".
   
   4.	Ejecutar archivo de las base de datos con la herramienta Microsoft SQL Server Management Studio, crear y usar la base de datos, 
   cargar las tablas e insertar los datos correspondientes para su posterior uso con el sistema.
