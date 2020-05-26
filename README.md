@@ -25,8 +25,10 @@ Las reglas, diagramaciones y funciones de la base de datos se mostrarán dentro 
 
 
 # Recomendación
-Tener instalada la herramienta Microsoft Visual Studio 2012 o versiones posteriores.
-Tener instalada y configurada la herramienta Microsoft SQL Server Management Studio 2012 o versiones posteriores.
+
+1. Tener instalada la herramienta Microsoft Visual Studio 2012 o versiones posteriores.
+
+2. Tener instalada y configurada la herramienta Microsoft SQL Server Management Studio 2012 o versiones posteriores.
 
 
 # Instalación
