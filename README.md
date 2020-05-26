@@ -2,9 +2,12 @@
 Sistema de gestión de ventas, productos y usuarios, basado en el lenguaje de programación C# (C Sharp), Entity Framework (EF) y AdminLTE.
 
 # Archivo
-Los archivos dentro de este sistema son los siguientes
+Los archivos dentro de este sistema son los siguientes:
+
 La arquitectura del proyecto está basada en el Modelo Vista-Controlador "MVC". Además de contar con el tema AdminLTE Version 2.0 el cual ya viene prefijo con sus versiones modificadas de Font Awesome 5.2.0 y Boostrap 4.
+
 Dentro del proyecto encontrara las siguientes carpetas: 
+
     1.	Content: Carpeta contenedora de componentes de Bootstrap.
     2.	Img: Carpeta contenedora de las imágenes utilizadas en el proyecto
     3.	Model: Carpeta contenedora sobre la Base de datos, utilizando Entity Framework (EF) apuntando a una base de datos existente.
