@@ -22,8 +22,8 @@ Las reglas, diagramaciones y funciones de la base de datos se mostrarán dentro 
 
 
 # Recomendación
-•	Tener instalada la herramienta Microsoft Visual Studio 2012 o versiones posteriores
-•	Tener instalada y configurada la herramienta Microsoft SQL Server Management Studio 2012 o versiones posteriores.
+Tener instalada la herramienta Microsoft Visual Studio 2012 o versiones posteriores.
+Tener instalada y configurada la herramienta Microsoft SQL Server Management Studio 2012 o versiones posteriores.
 
 
 # Instalación
@@ -95,8 +95,9 @@ Las reglas, diagramaciones y funciones de la base de datos se mostrarán dentro 
 
 # Referencias
 Las referencias en las que me baso para la realización del proyecto son las siguientes:
-    •	Funcionamiento del Modelo Vista-Controlador.
-    •	Herramienta Microsoft Visual Studio.
-    •	Herramienta Microsoft SQL Server Management Studio.
-    •	AdminLTE Control Panel Template.
-    •	Bootstrap 4.0.
+ Funcionamiento del Modelo Vista-Controlador.
+ Herramienta Microsoft Visual Studio.
+ Herramienta Microsoft SQL Server Management Studio.
+ AdminLTE Control Panel Template.
+ Bootstrap 4.0.
+ PDO Tutorial.
