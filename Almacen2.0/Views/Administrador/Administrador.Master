@@ -96,7 +96,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header"style="color:#fff ;border-top:#fff 1px solid; border-bottom:#fff 1px solid">MENU</li>
        
-        <li><a href="Almacen.aspx"><i class="glyphicon glyphicon-home"></i> <span>Productos Almacén</span></a></li> 
+        <li><a href="Productos.aspx"><i class="glyphicon glyphicon-home"></i> <span>Productos Almacén</span></a></li> 
         <li><a href="Reportes.aspx"><i class="glyphicon glyphicon-list-alt"></i> <span>Reportes</span></a></li>
         <li><a href="Usuarios.aspx"><i class="glyphicon glyphicon-user"></i> <span>Usuarios</span></a></li>
         <li><a href="Camaras.aspx"><i class="glyphicon glyphicon-facetime-video"></i> <span>Camaras</span></a></li>

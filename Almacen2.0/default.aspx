@@ -43,7 +43,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"/>
 </head>
 <body class="hold-transition login-page" style="background: url(Img/fondo-3.png);">
-    <div id="banner">
+    <div class="row" id="banner">
           <h1>Almacén Juanita</h1>
     </div>
 

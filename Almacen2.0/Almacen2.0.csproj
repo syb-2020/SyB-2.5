@@ -76,7 +76,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Administrador\Componentes\Almacen.aspx" />
+    <Content Include="Views\Administrador\Componentes\Productos.aspx" />
     <Content Include="Views\Administrador\Componentes\Camaras.aspx" />
     <Content Include="Views\Administrador\Componentes\Download.aspx" />
     <Content Include="Views\Administrador\Componentes\Generarventa.aspx" />
@@ -4376,12 +4376,6 @@
     <Compile Include="Models\Rol.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagrams_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -4401,12 +4395,12 @@
     <Compile Include="Views\Administrador\Administrador.Master.designer.cs">
       <DependentUpon>Administrador.Master</DependentUpon>
     </Compile>
-    <Compile Include="Views\Administrador\Componentes\Almacen.aspx.cs">
-      <DependentUpon>Almacen.aspx</DependentUpon>
+    <Compile Include="Views\Administrador\Componentes\Productos.aspx.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Administrador\Componentes\Almacen.aspx.designer.cs">
-      <DependentUpon>Almacen.aspx</DependentUpon>
+    <Compile Include="Views\Administrador\Componentes\Productos.aspx.designer.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrador\Componentes\Camaras.aspx.cs">
       <DependentUpon>Camaras.aspx</DependentUpon>
@@ -4526,6 +4520,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="files\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.7.0.17535\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.7.0.17535\analyzers\SonarAnalyzer.CFG.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.7.0.17535\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.7.0.17535\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

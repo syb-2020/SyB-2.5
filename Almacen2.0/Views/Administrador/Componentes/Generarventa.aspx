@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="../../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"/>
   <!-- Daterange picker -->
   <link rel="stylesheet" href="../../../bower_components/bootstrap-daterangepicker/daterangepicker.css"/>
+    <link rel="stylesheet" href="../../../bower_components/Style.css"/>
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="../../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"/>
 
@@ -67,18 +68,18 @@
                 <div class="box box-primary " style="border: 1px solid rgba(31, 45, 65, 0.125);">
                     <div class="box-header bg-yellow">
                         <h3 class="text-center text-dark" style="font-size: 1.8rem;
-           margin: 0;">Crear Venta</h3>
+           margin: 0;">Buscar Producto</h3>
                     </div>
                     <div class="box-body box-profile">
 
                         <div class="form-group">
-                            <label for="tcodigo">Codigo: </label>
+                            <label for="tcodigo"><h4>CODIGO:</h4></label>
                             <br />
-                            <div class="input-group mb-2">
+                            <div class="input-group-1" >
                                 <asp:TextBox runat="server" ID="tcodigo" CssClass="form-control" placeholder="Codigo"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="El campo es obligatorio" ForeColor="red" ControlToValidate="tcodigo" Display="Dynamic"
                         ValidationGroup="add"> </asp:RequiredFieldValidator>
-                                <br />
+                                
                                 <div class="input-group-prepend">
                                     <br />
                                     <asp:Button runat="server" ID="idbuscar" ValidationGroup="add" OnClick="idbuscar_Click1" Text="Buscar" CssClass="btn btn-info" />

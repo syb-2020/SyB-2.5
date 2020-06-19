@@ -56,7 +56,7 @@
             <div class="icon">
               <i class="glyphicon glyphicon-home"></i>
             </div>
-            <a href="Almacen.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="Productos.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>        
         <!-- ./col -->
