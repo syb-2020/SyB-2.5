@@ -30,6 +30,7 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="../../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" />
     <link href="../../../Content/estyle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../bower_components/Style.css"/>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,7 +50,7 @@
     <section class="content">
 
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-12">
 
                 <!-- Profile Image -->
                 <div class="box box-primary" style="border: 1px solid rgba(31, 45, 65, 0.125);">
@@ -109,7 +110,7 @@
 
                 <!-- /.box -->
             </div>
-            <div class="col-md-9">
+            <div class="col-md-12">
 
                 <!-- Profile Image -->
                 <div class="box box-primary" style="border: 1px solid rgba(31, 45, 65, 0.125);">
@@ -151,7 +152,7 @@
 
                 <!-- /.box -->
             </div>
-            <div class="col-md-9">
+            <div class="col-md-12">
 
                 <!-- Profile Image -->
                 <div class="box box-primary" style="border: 1px solid rgba(31, 45, 65, 0.125);">
@@ -203,12 +204,13 @@
         <!-- /.row -->
 
     </section>
-    <section class="content">
+    <!-- 
+        <section class="content">
 
         <div class="row">
             <div class="col-md-3">
 
-                <!-- Profile Image -->
+              
                 <div class="box box-primary" style="border: 1px solid rgba(31, 45, 65, 0.125);">
                     <div class="box-header bg-yellow">
                         <div class="col-md-6 col-xl-4">
@@ -229,6 +231,7 @@
             </div>
         </div>
     </section>
+    -->
     <!-- /.content -->
 
 </asp:Content>

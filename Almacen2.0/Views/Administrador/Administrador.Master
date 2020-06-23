@@ -193,7 +193,18 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../../../dist/js/demo.js"></script>
 
+  
+    <!-- FLOT CHARTS -->
+    <script src="../../bower_components/Flot/jquery.flot.js"></script>
+    <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+    <script src="../../bower_components/Flot/jquery.flot.resize.js"></script>
+    <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+    <script src="../../bower_components/Flot/jquery.flot.pie.js"></script>
+    <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+    <script src="../../bower_components/Flot/jquery.flot.categories.js"></script>
+   
                      
+
                 </ContentTemplate>   
             <%--<Triggers>
           <asp:PostBackTrigger ControlID="btnSubirArchivo"  />
