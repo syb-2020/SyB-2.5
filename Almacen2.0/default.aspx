@@ -52,33 +52,38 @@
   <div class="login-box-body">
     <p class="login-box-msg">Iniciar Sesión.</p>
 
-    <form id="form2" runat="server" method="post">
-      <div class="form-group has-feedback">
-        
-          <asp:TextBox ID="txtemail" type="email" runat="server" CssClass="form-control" placeholder="Email"></asp:TextBox>
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="El campo es obligatorio" ForeColor="red" ControlToValidate="txtemail" Display="Dynamic"
-                            ValidationGroup="iniciar"> </asp:RequiredFieldValidator>
-      </div>
-      <div class="form-group has-feedback">
-        
-          <asp:TextBox ID="txtpassword" TextMode="Password" runat="server" CssClass="form-control" placeholder="Password"></asp:TextBox>
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-          <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="El campo es obligatorio" ForeColor="red" ControlToValidate="txtpassword" Display="Dynamic"
-                            ValidationGroup="iniciar"> </asp:RequiredFieldValidator>
-      </div>
-      <div class="row">
-        <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"/> Recuerdame
-            </label>
+      <form id="form2" runat="server" method="post">
+          <div class="form-group has-feedback">
+
+              <asp:TextBox ID="txtemail" type="email" runat="server" CssClass="form-control" placeholder="Email"></asp:TextBox>
+              <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+              <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="El campo es obligatorio" ForeColor="red" ControlToValidate="txtemail" Display="Dynamic"
+                  ValidationGroup="iniciar"> </asp:RequiredFieldValidator>
           </div>
-        </div>
-        <!-- /.col -->
-        <div class="col-xs-4">
-          <asp:Button ValidationGroup="iniciar" ID="inicio" OnClick="inicio_Click" runat="server" class="btn btn-primary btn-block btn-flat" Text="Entrar" />
-             <asp:Panel ID="panel_mensaje" Visible="false" runat="server">
+          <div class="form-group has-feedback">
+
+              <asp:TextBox ID="txtpassword" TextMode="Password" runat="server" CssClass="form-control" placeholder="Password"></asp:TextBox>
+              <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+              <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="El campo es obligatorio" ForeColor="red" ControlToValidate="txtpassword" Display="Dynamic"
+                  ValidationGroup="iniciar"> </asp:RequiredFieldValidator>
+          </div>
+          <div class="row">
+              <div class="col-xs-8">
+                  <div class="checkbox icheck">
+                      <label>
+                          <input type="checkbox" />
+                          Recuerdame
+                      </label>
+                  </div>
+              </div>
+              <!-- /.col -->
+              <div class="col-xs-4">
+                  <asp:Button ValidationGroup="iniciar" ID="inicio" OnClick="inicio_Click" runat="server" class="btn btn-primary btn-block btn-flat" Text="Entrar" />
+              </div>
+              <!-- /.col -->
+          </div>
+          <div>
+              <asp:Panel ID="panel_mensaje" Visible="false" runat="server">
                   <strong>
                          <asp:Label ID="lbmensaje" runat="server" Text=""></asp:Label>
                   </strong>
@@ -86,10 +91,8 @@
                          <span aria-hidden="true">&times;</span>
                   </button>
              </asp:Panel>
-        </div>
-        <!-- /.col -->
-      </div>
-    </form>
+          </div>
+      </form>
     <!-- inicio
     <div class="social-auth-links text-center">
       <p>- OR -</p>

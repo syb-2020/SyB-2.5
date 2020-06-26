@@ -43,88 +43,88 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="idprincipal" runat="server">
     <section class="content">
-      <!-- Small boxes (Stat box) -->
-      <div class="row" style="height: 400px">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3></h3>
+        <!-- Small boxes (Stat box) -->
+        <div class="row" style="height: 400px">
+            <div class="col-md-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3></h3>
 
-              <p>Productos Almacén</p>
+                        <p>Productos Almacén</p>
+                    </div>
+                    <div class="icon">
+                        <i class="glyphicon glyphicon-home"></i>
+                    </div>
+                    <a href="Productos.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
             </div>
-            <div class="icon">
-              <i class="glyphicon glyphicon-home"></i>
-            </div>
-            <a href="Productos.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>        
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3><sup style="font-size: 20px"></sup></h3>
+            <!-- ./col -->
+            <div class="col-md-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3><sup style="font-size: 20px"></sup></h3>
 
-              <p>Reportes</p>
+                        <p>Reportes</p>
+                    </div>
+                    <div class="icon">
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                    </div>
+                    <a href="Reportes.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
             </div>
-            <div class="icon">
-              <i class="glyphicon glyphicon-list-alt"></i>
+            <!-- ./col -->
+            <div class="col-md-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3></h3>
+
+                        <p>Usuarios</p>
+                    </div>
+                    <div class="icon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                    <a href="Usuarios.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
             </div>
-            <a href="Reportes.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
+            <!-- ./col -->
+            <div class="col-md-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3></h3>
+
+                        <p>Camaras</p>
+                    </div>
+                    <div class="icon">
+                        <i class="glyphicon glyphicon-facetime-video"></i>
+                    </div>
+                    <a href="Camaras.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3></h3>
+
+                        <p>Generar Venta</p>
+                    </div>
+                    <div class="icon">
+                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                    </div>
+                    <a href="Generarventa.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+
+            <!-- ./col -->
         </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3></h3>
-
-              <p>Usuarios</p>
-            </div>
-            <div class="icon">
-              <i class="glyphicon glyphicon-user"></i>
-            </div>
-            <a href="Usuarios.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3></h3>
-
-              <p>Camaras</p>
-            </div>
-            <div class="icon">
-                <i class="glyphicon glyphicon-facetime-video"></i>
-            </div>
-            <a href="Camaras.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-                  <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3></h3>
-
-              <p>Generar Venta</p>
-            </div>
-            <div class="icon">
-              <i class="glyphicon glyphicon-shopping-cart"></i>
-            </div>
-            <a href="Generarventa.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-          
-
-        <!-- ./col -->
-      </div>
-      <!-- /.row -->
-      <!-- Main row -->
-      <!-- /.row (main row) -->
+        <!-- /.row -->
+        <!-- Main row -->
+        <!-- /.row (main row) -->
 
     </section>
 </asp:Content>

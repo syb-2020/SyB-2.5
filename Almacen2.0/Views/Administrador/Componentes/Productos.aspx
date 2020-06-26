@@ -49,7 +49,7 @@
     <!-- Main content -->
     <section class="content">
 
-        <div class="row">
+        <div class="row" style="margin-right: 0px; margin-left: 0px;">
             <div class="col-md-12">
 
                 <!-- Profile Image -->
@@ -61,34 +61,43 @@
                     <div class="box-body box-profile">
 
                         <div class="col-md-12">
-
-                            <br />
-
                             <div class="form-group">
-                                <label for="tidproductoagregar">ID Producto</label>
+                                <label for="tidproductoagregar">Código Producto</label>
                                 <asp:TextBox runat="server" ID="tidproductoagregar" CssClass="form-control"
-                                    placeholder="ID Producto">
+                                    placeholder="Código Producto">
                                 </asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="El campo es obligatorio" ForeColor="red" ControlToValidate="tidproductoagregar" Display="Dynamic"
+                                    ValidationGroup="add2"> </asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Ingrese solo numeros" ForeColor="red" Display="Dynamic" ControlToValidate="tidproductoagregar" ValidationExpression="^[0-9]+$" ValidationGroup="add2"></asp:RegularExpressionValidator>
                             </div>
                             <div class="form-group">
-                                <label for="tnombreproducto">Nombre: </label>
+                                <label for="tnombreproducto">Nombre Producto: </label>
                                 <asp:TextBox runat="server" ID="tnombreproducto" CssClass="form-control"
-                                    placeholder="Nombre"></asp:TextBox>
+                                    placeholder="Nombre Producto"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="El campo es obligatorio" ForeColor="red" ControlToValidate="tnombreproducto" Display="Dynamic"
+                                    ValidationGroup="add2"> </asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese solo letras" ForeColor="red" Display="Dynamic" ControlToValidate="tnombreproducto" ValidationExpression="^[a-zA-Z\s]+$" ValidationGroup="add2"></asp:RegularExpressionValidator>
                             </div>
                             <div class="form-group">
-                                <label for="tprecioproducto">Precio: </label>
+                                <label for="tprecioproducto">Precio Producto: </label>
                                 <asp:TextBox runat="server" ID="tprecioproducto" TextMode="Number"
-                                    CssClass="form-control" placeholder="Precio">
+                                    CssClass="form-control" placeholder="Precio Producto">
                                 </asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="El campo es obligatorio" ForeColor="red" ControlToValidate="tprecioproducto" Display="Dynamic"
+                                    ValidationGroup="add2"> </asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Ingrese solo numeros" ForeColor="red" Display="Dynamic" ControlToValidate="tprecioproducto" ValidationExpression="^[0-9]+$" ValidationGroup="add2"></asp:RegularExpressionValidator>
                             </div>
                             <div class="form-group">
-                                <label for="tstockproducto">Stock: </label>
+                                <label for="tstockproducto">Stock Producto: </label>
                                 <asp:TextBox runat="server" ID="tstockproducto" TextMode="Number"
-                                    CssClass="form-control" placeholder="Stock">
+                                    CssClass="form-control" placeholder="Stock Producto">
                                 </asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="El campo es obligatorio" ForeColor="red" ControlToValidate="tstockproducto" Display="Dynamic"
+                                    ValidationGroup="add2"> </asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Ingrese solo numeros" ForeColor="red" Display="Dynamic" ControlToValidate="tstockproducto" ValidationExpression="^[0-9]+$" ValidationGroup="add2"></asp:RegularExpressionValidator>
                             </div>
-                            <asp:Button runat="server" ID="idaddproducto" OnClick="idaddproducto_Click"
-                                CssClass="btn btn-success" Style="margin-bottom: 10px;" Text="Agregar" />
+                            <asp:Button runat="server" ID="idaddproducto" ValidationGroup="add2" OnClick="idaddproducto_Click"
+                                CssClass="btn btn-lg btn-success center-block"  Text="Agregar Producto" />
                             <asp:Panel ID="Alerta" runat="server" Visible="false">
                                 <strong>
                                     <asp:Label ID="lbAlerta" runat="server" Text=""></asp:Label>
@@ -111,23 +120,22 @@
                 <!-- /.box -->
             </div>
             <div class="col-md-12">
-
                 <!-- Profile Image -->
                 <div class="box box-primary" style="border: 1px solid rgba(31, 45, 65, 0.125);">
                     <div class="box-header bg-yellow">
-                        <h3 class="text-center text-dark" style="font-size: 1.8rem;
-           margin: 0;">Buscar Productos Almacén</h3>
+                        <h3 class="text-center text-dark" style="font-size: 1.8rem; margin: 0;">Buscar Productos Almacén</h3>
                     </div>
                     <div class="box-body box-profile">
                         <div class="form-group">
-                            <label for="txtDesc">Ingresar Codigo o Nombre del Producto</label>
-                            <asp:TextBox ID="txtDesc" type="text" CssClass="form-control" placeholder="Descripcion"
+                            <label for="txtDesc">Ingresar Código o Nombre del Producto</label>
+                            <asp:TextBox ID="txtDesc" type="text" CssClass="form-control" placeholder="Código o Nombre"
                                 runat="server" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="El campo es obligatorio" ForeColor="red" ControlToValidate="txtDesc" Display="Dynamic"
+                                    ValidationGroup="add3"> </asp:RequiredFieldValidator>
                         </div>
-                        <asp:Button ID="btnBuscar" CssClass="btn btn-success" runat="server" Text="Buscar"
+                        <asp:Button ID="btnBuscar" CssClass="btn btn-lg btn-success center-block" ValidationGroup="add3" runat="server" Text="Buscar"
                             OnClick="btnBuscar_Click" />
-
-
+                        
                         <div class="col-md-5">
                             <asp:Panel ID="panel_mensaje" Visible="false" runat="server">
                                 <strong>
@@ -141,61 +149,52 @@
                         <!-- /.nav-tabs-custom -->
                     </div>
                 </div>
-
-
-
-                <!-- /.box-body -->
-
-                <!-- /.box -->
-
-                <!-- About Me Box -->
-
-                <!-- /.box -->
             </div>
-            <div class="col-md-12">
 
+
+            <div class="col-md-12">               
                 <!-- Profile Image -->
                 <div class="box box-primary" style="border: 1px solid rgba(31, 45, 65, 0.125);">
                     <div class="box-header bg-yellow">
-                        <h3 class="text-center text-dark" style="font-size: 1.8rem;
-           margin: 0;">Productos </h3>
+                        <h3 class="text-center text-dark" style="font-size: 1.8rem; margin: 0px;">Productos </h3>
                     </div>
                     <div class="table-responsive text-center">
                         <asp:GridView ID="GridView1" OnRowCommand="GridView1_RowCommand"
-                            CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="false"
-                            PageSize="2" AllowPaging="True" AllowCustomPaging="True"
-                            OnPageIndexChanging="GridView1_PageIndexChanging">
+                            CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="false" PageSize="2"
+                            AllowPaging="True" AllowCustomPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging">
                             <Columns>
-                                <asp:BoundField HeaderStyle-CssClass="text-center" Visible="false"
-                                    DataField="id_producto" HeaderText="Id" />
-                                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="nombre"
-                                    HeaderText="Nombre" />
-                                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="precio"
-                                    DataFormatString="${0:N0}" HeaderText="Precio" />
-                                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="stock"
-                                    HeaderText="Stock" />
-                                <asp:ButtonField HeaderStyle-CssClass="text-center "
-                                    ControlStyle-CssClass="btn btn-success " ButtonType="Link" CommandName="IdVer"
-                                    Text="Seleccionar" HeaderText="Ver Producto" />
-                                <asp:ButtonField HeaderStyle-CssClass="text-center"
-                                    ControlStyle-CssClass="btn btn-danger" ButtonType="Link" CommandName="IdEliminar"
-                                    Text="Eliminar" HeaderText="Eliminar Producto" />
-                                <asp:ButtonField HeaderStyle-CssClass="text-center"
-                                    ControlStyle-CssClass="btn btn-warning center" ButtonType="Link"
-                                    CommandName="IdActualizar" Text="Editar" HeaderText="Actualizar Producto" />
+                                <asp:BoundField HeaderStyle-CssClass="text-center" Visible="false" DataField="id_producto"
+                                    HeaderText="Id" />
+                                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="nombre" HeaderText="Nombre" />
+                                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="precio" DataFormatString="${0:N0}"
+                                    HeaderText="Precio" />
+                                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="stock" HeaderText="Stock" />
+                                <asp:ButtonField HeaderStyle-CssClass="text-center " ControlStyle-CssClass="btn btn-success "
+                                    ButtonType="Link" CommandName="IdVer" Text="Seleccionar" HeaderText="Ver Producto" />
+                                <asp:ButtonField HeaderStyle-CssClass="text-center" ControlStyle-CssClass="btn btn-danger"
+                                    ButtonType="Link" CommandName="IdEliminar" Text="Eliminar" HeaderText="Eliminar Producto" />
+                                <asp:ButtonField HeaderStyle-CssClass="text-center" ControlStyle-CssClass="btn btn-warning center"
+                                    ButtonType="Link" CommandName="IdActualizar" Text="Editar" HeaderText="Actualizar Producto" />
                             </Columns>
                             <PagerSettings Mode="NumericFirstLast" PageButtonCount="8" FirstPageText="Primero"
                                 LastPageText="Ultimo" />
                             <PagerStyle CssClass="pagination-ys" HorizontalAlign="Center" />
-
+            
                             <HeaderStyle CssClass="btn-primary" />
                             <EmptyDataTemplate>
                                 <h4 class="text-primary"><strong>No</strong> Existen Datos.</h4>
                             </EmptyDataTemplate>
-                        </asp:GridView>
-
-                    </div>
+                        </asp:GridView>                       
+                    </div>                    
                 </div>
+                <asp:Panel ID="panel_mensaje3" Visible="false" runat="server">
+                    <strong>
+                        <asp:Label ID="lbmensaje3" runat="server" Text=""> </asp:Label>
+                    </strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </asp:Panel>
             </div>
             <!-- /.col -->
 
