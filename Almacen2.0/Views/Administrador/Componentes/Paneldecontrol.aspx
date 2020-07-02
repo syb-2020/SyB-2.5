@@ -29,6 +29,9 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="../../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"/>
 
+     <!-- estilos de animación banner-->
+        <link rel="stylesheet" type="text/css" href="../../bower_components/Style.css"/>
+     <link rel="icon" type="favicon/x-icon" />
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -39,7 +42,44 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"/>
     
+     <style>         
+           .gear {
+               float: left;
+               font-size: 30px;
+               animation-name: rotate-gear;
+               animation-duration: 2s;
+               animation-iteration-count: infinite;
+               animation-timing-function: linear;
+           }
 
+           @keyframes rotate-gear {
+               from {
+                   transform: rotateZ(0deg);
+               }
+
+               to {
+                   transform: rotateZ(360deg);
+               }
+           }
+
+           #logotipo:hover .gear{
+               animation: fromBellow 500ms linear;
+           }
+
+           @keyframes fromBellow {
+               0% {
+                   transform: translateY(0%);
+               }
+
+               50% {
+                   transform: translateY(200%);
+               }
+
+               100% {
+                   transform: translateY(0%);
+               }
+           }
+       </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="idprincipal" runat="server">
     <section class="content">

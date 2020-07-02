@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Almacen2._0.Models;
-using Almacen2._0.Views.Administrador;
+
 
 
 namespace Almacen2._0.Views.Administrador.Componentes
@@ -40,25 +39,28 @@ namespace Almacen2._0.Views.Administrador.Componentes
             return new MetodoProducto().GetPaginacionCount(desc);
 
         }
-
+        //Carga los datos en un gridview, con contador de paginas
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridView1.PageIndex = e.NewPageIndex;
             CargarData(e.NewPageIndex + 1, 2);
         }
-
+        //Servicio para buscar el producto
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             GridView1.VirtualItemCount = Count();
             CargarData(1, 2);
+            panel_mensaje3.Visible = true;
+            panel_mensaje3.CssClass = "alert alert-success";
+            lbmensaje3.Text = "Producto encontrado";
         }
 
-
+        //Servicio para poder ingresar un producto en el sistema
         protected void idaddproducto_Click(object sender, EventArgs e)
         {
             try
             {
-                Producto nuevo = new Producto { id_producto = Convert.ToInt32(tidproductoagregar.Text), nombre = tnombreproducto.Text, precio = Convert.ToInt32(tprecioproducto.Text), stock = Convert.ToInt32(tstockproducto.Text) };
+                Producto nuevo = new Producto { id_producto = tidproductoagregar.Text, nombre = tnombreproducto.Text, precio = Convert.ToInt32(tprecioproducto.Text), stock = Convert.ToInt32(tstockproducto.Text) };
 
                 context.Producto.Add(nuevo);
                 context.SaveChanges();
@@ -99,12 +101,13 @@ namespace Almacen2._0.Views.Administrador.Componentes
                 double.TryParse(IngresiFinal[1], out precio);
                 int.TryParse(GridView1.Rows[filaSeleccionada].Cells[3].Text, out stock);
 
-
+                //consulto por el id del producto a la base de datos y lo guardo en una variable
                 var id3 = from c in context.Producto
                           where c.nombre.Equals(nombre)
                           select new { c.id_producto };
-                int id4 = id3.ToList()[0].id_producto;
-
+                //guardo el id de la variable consultada en un nuevo id tipo string
+                string id4 = id3.ToList()[0].id_producto;
+                //Carga la informacion del producto en los siguientes entradas de textos.
                 tidproductoagregar.Text = id4.ToString();
                 tnombreproducto.Text = nombre.ToString();
                 tprecioproducto.Text = precio.ToString();
@@ -126,7 +129,7 @@ namespace Almacen2._0.Views.Administrador.Componentes
                 var listNombre = from litpr in context.Producto
                                  where litpr.nombre.StartsWith(nombre)
                                  select litpr;
-                int id = listNombre.ToList()[0].id_producto;
+                string id = listNombre.ToList()[0].id_producto;
 
                 context.Producto.Remove(context.Producto.Find(id));
                 context.SaveChanges();
@@ -148,7 +151,12 @@ namespace Almacen2._0.Views.Administrador.Componentes
 
                     Producto nuevo2 = new Producto();
 
-                    nuevo2 = context.Producto.Find(Convert.ToInt32(id2));
+                    var listNombre22 = from litpr in context.Producto
+                                     where litpr.id_producto.Equals(id2)
+                                     select litpr;
+                    string idactualizar = listNombre22.ToList()[0].id_producto;
+
+                    nuevo2 = context.Producto.Find(idactualizar);
                     nuevo2.nombre = tnombreproducto.Text;
                     nuevo2.precio = Convert.ToInt32(tprecioproducto.Text);
                     nuevo2.stock = Convert.ToInt32(tstockproducto.Text);
@@ -167,7 +175,7 @@ namespace Almacen2._0.Views.Administrador.Componentes
                 catch (Exception)
                 {
                     panel_mensaje3.Visible = true;
-                    panel_mensaje3.CssClass = "alert alert-success";
+                    panel_mensaje3.CssClass = "alert alert-danger";
                     lbmensaje3.Text = "Error, verifique los campos";
 
 

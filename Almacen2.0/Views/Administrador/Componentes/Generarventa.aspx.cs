@@ -18,8 +18,8 @@ namespace Almacen2._0.Views.Administrador.Componentes
 			using (almacen_avance2Entities1 contexto = new almacen_avance2Entities1()) {
 				var mostrarProducto = from pro in contexto.Producto
 									  select pro;
-				gridvmostrarproductoventa.DataSource = mostrarProducto.ToList();
-				gridvmostrarproductoventa.DataBind();
+				//gridvmostrarproductoventa.DataSource = mostrarProducto.ToList();
+				//gridvmostrarproductoventa.DataBind();
 
 
 				if (!IsPostBack)
@@ -47,12 +47,12 @@ namespace Almacen2._0.Views.Administrador.Componentes
 				try
 				{
 					string buscarcodigo = tcodigo.Text;
-					int buscarcodigo2 = Convert.ToInt32(buscarcodigo);
+					
 					var listProduct = from litpr in contexto.Producto
-									  where litpr.id_producto.Equals(buscarcodigo2)
+									  where litpr.id_producto.Equals(buscarcodigo)
 									  select litpr;
 					Producto producto = new Producto();
-					producto = listProduct.First(p => p.id_producto.Equals(buscarcodigo2));
+					producto = listProduct.First(p => p.id_producto.Equals(buscarcodigo));
 
 					if (producto.stock >= 1)
 					{
@@ -66,8 +66,8 @@ namespace Almacen2._0.Views.Administrador.Componentes
 						var listaProductoActu = from liActu in contexto.Producto
 												select liActu;
 
-						gridvmostrarproductoventa.DataSource = listaProductoActu.ToList();
-						gridvmostrarproductoventa.DataBind();
+						//gridvmostrarproductoventa.DataSource = listaProductoActu.ToList();
+						//gridvmostrarproductoventa.DataBind();
 
 
 					}
@@ -111,7 +111,7 @@ namespace Almacen2._0.Views.Administrador.Componentes
 			{
 
 				int fila = Convert.ToInt32(e.CommandArgument);
-				int cod = Convert.ToInt32(gridGenerarProducto.Rows[fila].Cells[1].Text);
+				string cod = gridGenerarProducto.Rows[fila].Cells[1].Text;
 
 
 				try
@@ -149,8 +149,8 @@ namespace Almacen2._0.Views.Administrador.Componentes
 								var listaProductoActu = from liActu in contexto.Producto
 														select liActu;
 
-								gridvmostrarproductoventa.DataSource = listaProductoActu.ToList();
-								gridvmostrarproductoventa.DataBind();
+								//gridvmostrarproductoventa.DataSource = listaProductoActu.ToList();
+								//gridvmostrarproductoventa.DataBind();
 
 
 							}
@@ -273,12 +273,6 @@ namespace Almacen2._0.Views.Administrador.Componentes
 
 			using (almacen_avance2Entities1 contextoDetalleVenta = new almacen_avance2Entities1())
 			{
-				var buscarAlmacen = from alm in contextoDetalleVenta.Almacen
-									select new
-									{
-										alm.id_almacen
-									};
-
 
 				foreach (var item in carro)
 				{
@@ -286,7 +280,7 @@ namespace Almacen2._0.Views.Administrador.Componentes
 					nuevoDetalleVenta.id_producto = item.id_producto;
 					nuevoDetalleVenta.id_venta = num_venta;
                     Session["id_venta_boleta"] = num_venta;
-                    nuevoDetalleVenta.id_almacen = Convert.ToInt32(buscarAlmacen.First().id_almacen);
+                  
 					nuevoDetalleVenta.id_tipo_pago = Convert.ToInt32(idtipopago.SelectedItem.Value);
                     nuevoDetalleVenta.numero_cliente = num_cliente;
                     Session["num_cliente"] = num_cliente;

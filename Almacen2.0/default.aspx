@@ -22,7 +22,11 @@
   <link rel="stylesheet" href="../../plugins/iCheck/square/blue.css"/>
    
     <!-- estilos de animación banner-->
-    <link rel="stylesheet" href="../../bower_components/Style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../bower_components/Style.css"/>
+
+    <link rel="icon" type="favicon/x-icon" />
+
+   
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -77,7 +81,8 @@
                   </div>
               </div>
               <!-- /.col -->
-              <div class="col-xs-4">
+              
+              <div class="col-xs-4">                                                         
                   <asp:Button ValidationGroup="iniciar" ID="inicio" OnClick="inicio_Click" runat="server" class="btn btn-primary btn-block btn-flat" Text="Entrar" />
               </div>
               <!-- /.col -->

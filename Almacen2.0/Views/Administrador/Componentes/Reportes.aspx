@@ -30,6 +30,46 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="../../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" />
 
+     <!-- estilos de animación banner-->
+        <link rel="stylesheet" type="text/css" href="../../bower_components/Style.css"/>
+    <style>         
+           .gear {
+               float: left;
+               font-size: 30px;
+               animation-name: rotate-gear;
+               animation-duration: 2s;
+               animation-iteration-count: infinite;
+               animation-timing-function: linear;
+           }
+
+           @keyframes rotate-gear {
+               from {
+                   transform: rotateZ(0deg);
+               }
+
+               to {
+                   transform: rotateZ(360deg);
+               }
+           }
+
+           #logotipo:hover .gear{
+               animation: fromBellow 500ms linear;
+           }
+
+           @keyframes fromBellow {
+               0% {
+                   transform: translateY(0%);
+               }
+
+               50% {
+                   transform: translateY(200%);
+               }
+
+               100% {
+                   transform: translateY(0%);
+               }
+           }
+       </style>
     <!--Primer Grafico-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -253,7 +293,7 @@
 
     <!-- Small boxes (Stat box) -->
     <div class="content">
-        <div class="row">
+        <div class="row" style="margin-right: 0px; margin-left: 0px;">
 
             <div class="col-md-4">
 

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Trabajador/Trabajador.Master" AutoEventWireup="true" CodeBehind="Paneldecontrol.aspx.cs" Inherits="Almacen2._0.Views.Trabajador.Paneldecontrol" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-     <meta charset="utf-8"/>
+        <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -29,6 +29,9 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="../../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"/>
 
+     <!-- estilos de animación banner-->
+        <link rel="stylesheet" type="text/css" href="../../bower_components/Style.css"/>
+     <link rel="icon" type="favicon/x-icon" />
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -39,50 +42,100 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"/>
     
+     <style>         
+           .gear {
+               float: left;
+               font-size: 30px;
+               animation-name: rotate-gear;
+               animation-duration: 2s;
+               animation-iteration-count: infinite;
+               animation-timing-function: linear;
+           }
+
+           @keyframes rotate-gear {
+               from {
+                   transform: rotateZ(0deg);
+               }
+
+               to {
+                   transform: rotateZ(360deg);
+               }
+           }
+
+           #logotipo:hover .gear{
+               animation: fromBellow 500ms linear;
+           }
+
+           @keyframes fromBellow {
+               0% {
+                   transform: translateY(0%);
+               }
+
+               50% {
+                   transform: translateY(200%);
+               }
+
+               100% {
+                   transform: translateY(0%);
+               }
+           }
+       </style>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="idprincipal2" runat="server">
     <section class="content">
-      <!-- Small boxes (Stat box) -->
-      <div class="row" style="height: 400px">               
-        <!-- ./col -->
-        
-        <!-- ./col -->
-        
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3></h3>
+        <!-- Small boxes (Stat box) -->
+        <div class="row" style="height: 400px">  
+            <div class="col-md-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3></h3>
 
-              <p>Camaras</p>
+                        <p>Productos Almacén</p>
+                    </div>
+                    <div class="icon">
+                        <i class="glyphicon glyphicon-home"></i>
+                    </div>
+                    <a href="Productos.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
             </div>
-            <div class="icon">
-                <i class="glyphicon glyphicon-facetime-video"></i>
+            <!-- ./col -->
+            <div class="col-md-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3></h3>
+
+                        <p>Camaras</p>
+                    </div>
+                    <div class="icon">
+                        <i class="glyphicon glyphicon-facetime-video"></i>
+                    </div>
+                    <a href="Camaras.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
             </div>
-            <a href="Camaras.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
+            <div class="col-md-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3></h3>
+
+                        <p>Generar Venta</p>
+                    </div>
+                    <div class="icon">
+                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                    </div>
+                    <a href="Generarventa.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+
+            <!-- ./col -->
         </div>
-                  <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3></h3>
-
-              <p>Generar Venta</p>
-            </div>
-            <div class="icon">
-              <i class="glyphicon glyphicon-shopping-cart"></i>
-            </div>
-            <a href="Generarventa.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-
-        <!-- ./col -->
-      </div>
-      <!-- /.row -->
-      <!-- Main row -->
-      <!-- /.row (main row) -->
+        <!-- /.row -->
+        <!-- Main row -->
+        <!-- /.row (main row) -->
 
     </section>
 </asp:Content>

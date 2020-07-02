@@ -30,8 +30,47 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="../../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" />
     <link href="../../../Content/estyle.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../../bower_components/Style.css"/>
 
+    <!-- estilos de animación banner-->
+        <link rel="stylesheet" type="text/css" href="../../bower_components/Style.css"/>
+    <style>         
+           .gear {
+               float: left;
+               font-size: 30px;
+               animation-name: rotate-gear;
+               animation-duration: 2s;
+               animation-iteration-count: infinite;
+               animation-timing-function: linear;
+           }
+
+           @keyframes rotate-gear {
+               from {
+                   transform: rotateZ(0deg);
+               }
+
+               to {
+                   transform: rotateZ(360deg);
+               }
+           }
+
+           #logotipo:hover .gear{
+               animation: fromBellow 500ms linear;
+           }
+
+           @keyframes fromBellow {
+               0% {
+                   transform: translateY(0%);
+               }
+
+               50% {
+                   transform: translateY(200%);
+               }
+
+               100% {
+                   transform: translateY(0%);
+               }
+           }
+       </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -202,35 +241,6 @@
         </div>
         <!-- /.row -->
 
-    </section>
-    <!-- 
-        <section class="content">
-
-        <div class="row">
-            <div class="col-md-3">
-
-              
-                <div class="box box-primary" style="border: 1px solid rgba(31, 45, 65, 0.125);">
-                    <div class="box-header bg-yellow">
-                        <div class="col-md-6 col-xl-4">
-                            <div class="card mb-3 widget-content bg-arielle-smile">
-                                <div class="widget-content-wrapper text-white">
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Clients</div>
-                                        <div class="widget-subheading">Total Clients Profit</div>
-                                    </div>
-                                    <div class="widget-content-right">
-                                        <div class="widget-numbers text-white"><span>$ 568</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    -->
-    <!-- /.content -->
+    </section>    
 
 </asp:Content>

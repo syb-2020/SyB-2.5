@@ -14,6 +14,7 @@ create table Usuario(
 	nombre varchar(100) not null,
 	apellido varchar(100) not null,
 	direccion varchar (100) not null,
+	numero_telefonico varchar (100) not null,
 	id_rol int not null,
 	foreign key(id_rol) references Rol(id_rol)
 );
@@ -48,7 +49,7 @@ create table Venta(
 );
 
 create table Producto(
-	id_producto int not null primary key ,
+	id_producto varchar (300) not null primary key ,
 	nombre varchar (100) not null unique,
 	precio int not null,
 	stock int not null
@@ -62,7 +63,7 @@ create table Almacen(
 create table Detalle_venta(
 	id_detalle int identity (1,1) primary key,
 	precio_venta int not null unique, 
-	id_producto int not null,
+	id_producto varchar (300) not null,
 	id_venta int not null,
 	id_almacen int not null,
 	id_tipo_pago int not null,
@@ -99,8 +100,8 @@ create table Reportes(
 insert Rol(nombre) values ('Administrador');
 insert Rol(nombre) values ('Trabajador');
 
-insert Usuario (email,clave,nombre,apellido,direccion,id_rol) values ('guille@gmail.cl','1234','Guillermo','Fuentes','23 norte 5 oriente D',1);
-insert Usuario (email,clave,nombre,apellido,direccion,id_rol) values ('mario@gmail.cl','1234','Mario','Garrido','Longavi',2);
+insert Usuario (email,clave,nombre,apellido,direccion,numero_telefonico,id_rol) values ('guille@gmail.cl','1234','Guillermo','Fuentes','23 norte 5 oriente D','990034265',1);
+insert Usuario (email,clave,nombre,apellido,direccion,id_rol) values ('mario@gmail.cl','1234','Mario','Garrido','Longavi','990880926',2);
 
 insert Tipo_pago (descripcion) values ('Efectivo');
 insert Tipo_pago (descripcion) values ('Credito');

@@ -65,3 +65,33 @@
 }
 
 /*ID Tabla Buscar Productos*/
+
+/*margenes de botones en generar venta*/
+.margen1{
+    margin-right:10px !important;
+}
+
+
+@font-face {
+    font-family: "WebSymbolsRegular";
+    src: url("fonts/websymbols-regular-webfont.eot");
+    src: url("fonts/websymbols-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/websymbols-regular-webfont.woff") format("woff"), url("fonts/websymbols-regular-webfont.ttf") format("truetype"), url("fonts/websymbols-regular-webfont.svg#WebSymbolsRegular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*carga iconos en la pagina web*/
+.gear,
+.icon {
+    font-family: "WebSymbolsRegular";
+}
+
+/*TRANSICIONES Y ANIMACIONES AL LOGOTIPO .GEAR*/
+
+
+
+
+
+
+    
+

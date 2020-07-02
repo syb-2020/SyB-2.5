@@ -1,13 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Trabajador/Trabajador.Master" AutoEventWireup="true" CodeBehind="Camaras.aspx.cs" Inherits="Almacen2._0.Views.Trabajador.Componentes.Camaras" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-           <meta charset="utf-8"/>
+             <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Almacen | Juanita</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
-  <!-- Bootstrap 3.3.7 -->
+   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../../bower_components/font-awesome/css/font-awesome.min.css"/>
@@ -29,6 +29,46 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="../../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"/>
 
+     <!-- estilos de animación banner-->
+        <link rel="stylesheet" type="text/css" href="../../bower_components/Style.css"/>
+    <style>         
+           .gear {
+               float: left;
+               font-size: 30px;
+               animation-name: rotate-gear;
+               animation-duration: 2s;
+               animation-iteration-count: infinite;
+               animation-timing-function: linear;
+           }
+
+           @keyframes rotate-gear {
+               from {
+                   transform: rotateZ(0deg);
+               }
+
+               to {
+                   transform: rotateZ(360deg);
+               }
+           }
+
+           #logotipo:hover .gear{
+               animation: fromBellow 500ms linear;
+           }
+
+           @keyframes fromBellow {
+               0% {
+                   transform: translateY(0%);
+               }
+
+               50% {
+                   transform: translateY(200%);
+               }
+
+               100% {
+                   transform: translateY(0%);
+               }
+           }
+       </style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>

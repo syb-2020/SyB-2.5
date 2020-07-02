@@ -7,8 +7,7 @@
 <html>
 <head runat="server">
     <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-        
+    <asp:ContentPlaceHolder ID="head" runat="server">      
     </asp:ContentPlaceHolder>   
    
 </head>
@@ -16,196 +15,196 @@
     <form id="form1" runat="server" method="post" enctype="multipart/form-data">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true"></asp:ScriptManager>
         <asp:UpdatePanel runat="server" ID="UpdatePanel1" UpdateMode="Always">
-				<ContentTemplate>
-                    <div class="wrapper">
+            <ContentTemplate>
+                <div class="wrapper">
 
-  <header class="main-header">
-    <!-- Logo -->
-    <a href="Paneldecontrol.aspx" class="logo" style="background-color:#0061f2">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>S</b>yB</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Almacén</b>SyB</span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top" style="background-color:#0061f2">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
+                    <header class="main-header">
+                        <!-- Logo -->
+                        <a href="Paneldecontrol.aspx" class="logo" style="background-color: #0061f2">
+                            <!-- mini logo for sidebar mini 50x50 pixels -->
+                            <span class="logo-mini"><b>S</b>yB</span>
+                            <!-- logo for regular state and mobile devices -->
+                            <span class="logo-lg"><b>Almacén</b>SyB</span>
+                        </a>
+                        <!-- Header Navbar: style can be found in header.less -->
+                        <nav class="navbar navbar-static-top" style="background-color: #0061f2">
+                            <!-- Sidebar toggle button-->
+                            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                                <span class="sr-only">Toggle navigation</span>
+                            </a>
 
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-         
-          <!-- Notifications: style can be found in dropdown.less -->
-         
-          <!-- Tasks: style can be found in dropdown.less -->
-  
-          <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-               <img src="../../../Img/imagencara.png" class="user-image" alt="User Image"/>
-              <span class="hidden-xs"><%=Session["nombre"]%> <%=Session["apellido"]%></span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="../../../Img/imagencara.png" class="img-circle" alt="User Image"/>
+                            <div class="navbar-custom-menu">
+                                <ul class="nav navbar-nav">
+                                    <!-- Messages: style can be found in dropdown.less-->
 
-                <p>
-                  <%=Session["email"]%> - <%=Session["nombre_rol"]%>
-                  <small><%=Session["fecha"]%></small>
-                </p>
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">                
-                <div class="pull-right">
-                  <a href="../../../default.aspx" class="btn btn-default btn-flat">Cerrar Sesión</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-      <!-- Sidebar user panel -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="../../../Img/imagencara.png" class="img-circle" alt="User Image"/>
-        </div>
-        <div class="pull-left info">
-          <p><%=Session["nombre"]%> <%=Session["apellido"]%></p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a><br />
-            <a href="#"><i class=" text-success"></i> <%=Session["email"]%></a><br />
-            <a href="#"><i class=" text-success"></i> <%=Session["nombre_rol"]%></a><br />
-           <br /><br />          
-        </div>
-      </div>
-      <!-- search form -->
-      
-      <!-- /.search form -->
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree">
-        <li class="header"style="color:#fff ;border-top:#fff 1px solid; border-bottom:#fff 1px solid">MENU</li>
-       
-        <li><a href="Productos.aspx"><i class="glyphicon glyphicon-home"></i> <span>Productos Almacén</span></a></li> 
-        <li><a href="Reportes.aspx"><i class="glyphicon glyphicon-list-alt"></i> <span>Reportes</span></a></li>
-        <li><a href="Usuarios.aspx"><i class="glyphicon glyphicon-user"></i> <span>Usuarios</span></a></li>
-        <li><a href="Camaras.aspx"><i class="glyphicon glyphicon-facetime-video"></i> <span>Camaras</span></a></li>
-        <li><a href="Generarventa.aspx"><i class="glyphicon glyphicon-shopping-cart"></i> <span>Generar Venta</span></a></li>
-        <li><a href="Paneldecontrol.aspx"><i class="glyphicon glyphicon-th"></i><span>Panel de control</span></a></li>
-      </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+                                    <!-- Notifications: style can be found in dropdown.less -->
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class=" new content-wrapper" style="background-color: #e3e6ec; ">
-    <!-- Content Header (Page header) -->
-      <section class="content-header bg-dark">
-          <h1>Almacén <%=Session["nombre_Almacen"]%>
-        <small>Panel de Control</small>
-          </h1>
-          <ol class="breadcrumb">
-              <li><a href="Paneldecontrol.aspx"><i class="fa fa-dashboard"></i>Inicio</a></li>
-              <li class="active">Menu</li>
-          </ol>
-      </section>
-<%--      <div class="box box-primary" style="border-left: 3px solid #d2d6de; border-right: 3px solid #d2d6de; border-bottom:3px solid #d2d6de;     border-left-color: #3c8dbc ;     border-right-color: #3c8dbc ;     border-bottom-color: #3c8dbc; margin-top: 20px ">          --%>
-      <div>
-        <asp:ContentPlaceHolder ID="idprincipal" runat="server">
-          
-   </style>
-      </asp:ContentPlaceHolder>
-      </div> 
-      
-     <%-- </div>--%>
-      <!-- /.row -->
-      <!-- Main row -->
-      <!-- /.row (main row) -->
+                                    <!-- Tasks: style can be found in dropdown.less -->
 
-  
-    <!-- /.content -->
-  </div>
-  
-  <!-- /.content-wrapper -->
- <footer class="main-footer" style="position:unset;">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.0
-    </div>
-    <strong>Copyright &copy; 2019 <a href="Administrador.aspx">Save Your Business</a>.</strong> Todos Los Derechos Reservados
-  </footer>
+                                    <!-- User Account: style can be found in dropdown.less -->
+                                    <li class="dropdown user user-menu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <img src="../../../Img/imagencara.png" class="user-image" alt="User Image" />
+                                            <span class="hidden-xs"><%=Session["nombre"]%> <%=Session["apellido"]%></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <!-- User image -->
+                                            <li class="user-header">
+                                                <img src="../../../Img/imagencara.png" class="img-circle" alt="User Image" />
 
-  <!-- Control Sidebar -->
-  
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
+                                                <p>
+                                                    <%=Session["email"]%> - <%=Session["nombre_rol"]%>
+                                                    <small><%=Session["fecha"]%></small>
+                                                </p>
+                                            </li>
+                                            <!-- Menu Footer-->
+                                            <li class="user-footer">
+                                                <div class="pull-right">
+                                                    <a href="../../../default.aspx" class="btn btn-default btn-flat">Cerrar Sesión</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- Control Sidebar Toggle Button -->
+
+                                </ul>
+                            </div>
+                        </nav>
+                    </header>
+                    <!-- Left side column. contains the logo and sidebar -->
+                    <aside class="main-sidebar">
+                        <!-- sidebar: style can be found in sidebar.less -->
+                        <section class="sidebar">
+                            <!-- Sidebar user panel -->
+                            <div class="user-panel">
+                                <div class="pull-left image">
+                                    <img src="../../../Img/imagencara.png" class="img-circle" alt="User Image" />
+                                </div>
+                                <div class="pull-left info">
+                                    <p><%=Session["nombre"]%> <%=Session["apellido"]%></p>
+                                    <a href="#"><i class="fa fa-circle text-success"></i>Online</a><br />
+                                    <a href="#"><i class=" text-success"></i><%=Session["email"]%></a><br />
+                                    <a href="#"><i class=" text-success"></i><%=Session["nombre_rol"]%></a><br />
+                                    <br />
+                                    <br />
+                                </div>
+                            </div>
+                            <!-- search form -->
+
+                            <!-- /.search form -->
+                            <!-- sidebar menu: : style can be found in sidebar.less -->
+                            <ul class="sidebar-menu" data-widget="tree">
+                                <li class="header" style="color: #fff; border-top: #fff 1px solid; border-bottom: #fff 1px solid">MENU</li>
+
+                                <li><a href="Productos.aspx"><i class="glyphicon glyphicon-home"></i><span>Productos Almacén</span></a></li>
+                                <li><a href="Reportes.aspx"><i class="glyphicon glyphicon-list-alt"></i><span>Reportes</span></a></li>
+                                <li><a href="Usuarios.aspx"><i class="glyphicon glyphicon-user"></i><span>Usuarios</span></a></li>
+                                <li><a href="Camaras.aspx"><i class="glyphicon glyphicon-facetime-video"></i><span>Camaras</span></a></li>
+                                <li><a href="Generarventa.aspx"><i class="glyphicon glyphicon-shopping-cart"></i><span>Generar Venta</span></a></li>
+                                <li><a href="Paneldecontrol.aspx"><i class="glyphicon glyphicon-th"></i><span>Panel de control</span></a></li>
+                            </ul>
+                        </section>
+                        <!-- /.sidebar -->
+                    </aside>
+
+                    <!-- Content Wrapper. Contains page content -->
+                    <div class=" new content-wrapper" style="background-color: #e3e6ec;">
+                        <!-- Content Header (Page header) -->
+
+                        <section class="content-header bg-dark">
+                            <h1>Almacén <%=Session["nombre_Almacen"]%>
+                                <%--<small>Panel de Control</small>--%>
+                                <small class="gear" style="font-size: 25px; color: #000000"><span class="glyphicon glyphicon-cog" /></small>
+                            </h1>
+                            <ol class="breadcrumb">
+                                <li><a href="Paneldecontrol.aspx"><i class="fa fa-dashboard"></i>Inicio</a></li>
+                                <li class="active">Menu</li>
+                            </ol>
+                        </section>
+                        <%--      <div class="box box-primary" style="border-left: 3px solid #d2d6de; border-right: 3px solid #d2d6de; border-bottom:3px solid #d2d6de;     border-left-color: #3c8dbc ;     border-right-color: #3c8dbc ;     border-bottom-color: #3c8dbc; margin-top: 20px ">          --%>
+                        <div>
+                            <asp:ContentPlaceHolder ID="idprincipal" runat="server">
+                              
+
+                            </asp:ContentPlaceHolder>
+                        </div>
+
+                        <%-- </div>--%>
+                        <!-- /.row -->
+                        <!-- Main row -->
+                        <!-- /.row (main row) -->
+
+
+                        <!-- /.content -->
+                    </div>
+
+                    <!-- /.content-wrapper -->
+                    <footer class="main-footer" style="position: unset;">
+                        <div class="pull-right hidden-xs">
+                            <b>Version</b> 2.0
+                        </div>
+                        <strong>Copyright &copy; 2019 <a href="Administrador.aspx">Save Your Business</a>.</strong> Todos Los Derechos Reservados
+                    </footer>
+
+                    <!-- Control Sidebar -->
+
+                    <!-- /.control-sidebar -->
+                    <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-                        
+                    <div class="control-sidebar-bg"></div>
+
 
 
                     <!-- ./wrapper -->
 
-    <!-- jQuery 3 -->
-    <script src="../../../bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="../../../bower_components/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-        $.widget.bridge('uibutton', $.ui.button);
-    </script> 
-    <!-- Bootstrap 3.3.7 -->
-    <script src="../../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- Morris.js charts -->
-    <script src="../../../bower_components/raphael/raphael.min.js"></script>
-    <script src="../../../bower_components/morris.js/morris.min.js"></script>
-    <!-- Sparkline -->
-    <script src="../../../bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-    <!-- jvectormap -->
-    <script src="../../../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="../../../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <!-- jQuery Knob Chart -->
-    <script src="../../../bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
-    <!-- daterangepicker -->
-    <script src="../../../bower_components/moment/min/moment.min.js"></script>
-    <script src="../../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <!-- datepicker -->
-    <script src="../../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-    <!-- Bootstrap WYSIHTML5 -->
-    <script src="../../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-    <!-- Slimscroll -->
-    <script src="../../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-    <!-- FastClick -->
-    <script src="../../../bower_components/fastclick/lib/fastclick.js"></script>
-    <!-- AdminLTE App -->
-    <script src="../../../dist/js/adminlte.min.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="../../../dist/js/pages/dashboard.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="../../../dist/js/demo.js"></script>
+                    <!-- jQuery 3 -->
+                    <script src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+                    <!-- jQuery UI 1.11.4 -->
+                    <script src="../../../bower_components/jquery-ui/jquery-ui.min.js"></script>
+                    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+                    <script>
+                        $.widget.bridge('uibutton', $.ui.button);
+                    </script>
+                    <!-- Bootstrap 3.3.7 -->
+                    <script src="../../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+                    <!-- Morris.js charts -->
+                    <script src="../../../bower_components/raphael/raphael.min.js"></script>
+                    <script src="../../../bower_components/morris.js/morris.min.js"></script>
+                    <!-- Sparkline -->
+                    <script src="../../../bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+                    <!-- jvectormap -->
+                    <script src="../../../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+                    <script src="../../../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+                    <!-- jQuery Knob Chart -->
+                    <script src="../../../bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+                    <!-- daterangepicker -->
+                    <script src="../../../bower_components/moment/min/moment.min.js"></script>
+                    <script src="../../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+                    <!-- datepicker -->
+                    <script src="../../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+                    <!-- Bootstrap WYSIHTML5 -->
+                    <script src="../../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+                    <!-- Slimscroll -->
+                    <script src="../../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+                    <!-- FastClick -->
+                    <script src="../../../bower_components/fastclick/lib/fastclick.js"></script>
+                    <!-- AdminLTE App -->
+                    <script src="../../../dist/js/adminlte.min.js"></script>
+                    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+                    <script src="../../../dist/js/pages/dashboard.js"></script>
+                    <!-- AdminLTE for demo purposes -->
+                    <script src="../../../dist/js/demo.js"></script>
 
-  
-    <!-- FLOT CHARTS -->
-    <script src="../../bower_components/Flot/jquery.flot.js"></script>
-    <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-    <script src="../../bower_components/Flot/jquery.flot.resize.js"></script>
-    <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-    <script src="../../bower_components/Flot/jquery.flot.pie.js"></script>
-    <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-    <script src="../../bower_components/Flot/jquery.flot.categories.js"></script>
-   
-                     
 
-                </ContentTemplate>   
+                    <!-- FLOT CHARTS -->
+                    <script src="../../bower_components/Flot/jquery.flot.js"></script>
+                    <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+                    <script src="../../bower_components/Flot/jquery.flot.resize.js"></script>
+                    <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+                    <script src="../../bower_components/Flot/jquery.flot.pie.js"></script>
+                    <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+                    <script src="../../bower_components/Flot/jquery.flot.categories.js"></script>
+            </ContentTemplate>
             <%--<Triggers>
           <asp:PostBackTrigger ControlID="btnSubirArchivo"  />
       </Triggers>       --%>
