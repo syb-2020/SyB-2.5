@@ -88,7 +88,7 @@ create table Camaras(
 create table Reportes(
 	id_reporte int identity (1,1) primary key,
 	fecha datetime Default Getdate(),
-	descripción varchar(8000),
+	descripciÃ³n varchar(8000),
 	id_usuario int not null,
 	id_venta int not null,
 	id_almacen int not null,
@@ -101,7 +101,7 @@ insert Rol(nombre) values ('Administrador');
 insert Rol(nombre) values ('Trabajador');
 
 insert Usuario (email,clave,nombre,apellido,direccion,numero_telefonico,id_rol) values ('guille@gmail.cl','1234','Guillermo','Fuentes','23 norte 5 oriente D','990034265',1);
-insert Usuario (email,clave,nombre,apellido,direccion,id_rol) values ('mario@gmail.cl','1234','Mario','Garrido','Longavi','990880926',2);
+insert Usuario (email,clave,nombre,apellido,direccion,numero_telefonico,id_rol) values ('mario@gmail.cl','1234','Mario','Garrido','Longavi','990880926',2);
 
 insert Tipo_pago (descripcion) values ('Efectivo');
 insert Tipo_pago (descripcion) values ('Credito');
