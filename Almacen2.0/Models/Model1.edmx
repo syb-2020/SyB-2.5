@@ -107,7 +107,7 @@
           <Property Name="id_usuario" Type="int" Nullable="false" />
           <Property Name="id_pago" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Camaras__id_rol__35BCFE0A">
+        <Association Name="FK__Camaras__id_rol__48CFD27E">
           <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
           <End Role="Camaras" Type="Self.Camaras" Multiplicity="*" />
           <ReferentialConstraint>
@@ -119,7 +119,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Camaras__id_usua__34C8D9D1">
+        <Association Name="FK__Camaras__id_usua__47DBAE45">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Camaras" Type="Self.Camaras" Multiplicity="*" />
           <ReferentialConstraint>
@@ -131,7 +131,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_v__id_pr__2E1BDC42">
+        <Association Name="FK__Detalle_v__id_pr__412EB0B6">
           <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
           <End Role="Detalle_venta" Type="Self.Detalle_venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -143,7 +143,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_v__id_ti__300424B4">
+        <Association Name="FK__Detalle_v__id_ti__4316F928">
           <End Role="Tipo_pago" Type="Self.Tipo_pago" Multiplicity="1" />
           <End Role="Detalle_venta" Type="Self.Detalle_venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -155,7 +155,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_v__id_ve__2F10007B">
+        <Association Name="FK__Detalle_v__id_ve__4222D4EF">
           <End Role="Venta" Type="Self.Venta" Multiplicity="1" />
           <End Role="Detalle_venta" Type="Self.Detalle_venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -167,7 +167,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_v__numer__30F848ED">
+        <Association Name="FK__Detalle_v__numer__440B1D61">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="Detalle_venta" Type="Self.Detalle_venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -179,7 +179,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Pago__id_tipo_pa__1CF15040">
+        <Association Name="FK__Pago__id_tipo_pa__30F848ED">
           <End Role="Tipo_pago" Type="Self.Tipo_pago" Multiplicity="1" />
           <End Role="Pago" Type="Self.Pago" Multiplicity="*" />
           <ReferentialConstraint>
@@ -191,7 +191,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Pago__numero_cli__1BFD2C07">
+        <Association Name="FK__Pago__numero_cli__300424B4">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="Pago" Type="Self.Pago" Multiplicity="*" />
           <ReferentialConstraint>
@@ -203,7 +203,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reportes__id_alm__3B75D760">
+        <Association Name="FK__Reportes__id_alm__4E88ABD4">
           <End Role="Almacen" Type="Self.Almacen" Multiplicity="1" />
           <End Role="Reportes" Type="Self.Reportes" Multiplicity="*" />
           <ReferentialConstraint>
@@ -215,7 +215,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reportes__id_usu__398D8EEE">
+        <Association Name="FK__Reportes__id_usu__4CA06362">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Reportes" Type="Self.Reportes" Multiplicity="*" />
           <ReferentialConstraint>
@@ -227,7 +227,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reportes__id_ven__3A81B327">
+        <Association Name="FK__Reportes__id_ven__4D94879B">
           <End Role="Venta" Type="Self.Venta" Multiplicity="1" />
           <End Role="Reportes" Type="Self.Reportes" Multiplicity="*" />
           <ReferentialConstraint>
@@ -239,7 +239,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__id_rol__145C0A3F">
+        <Association Name="FK__Usuario__id_rol__286302EC">
           <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -251,7 +251,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta__id_pago__22AA2996">
+        <Association Name="FK__Venta__id_pago__36B12243">
           <End Role="Pago" Type="Self.Pago" Multiplicity="1" />
           <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -263,7 +263,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta__id_usuari__21B6055D">
+        <Association Name="FK__Venta__id_usuari__35BCFE0A">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -275,7 +275,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta__numero_cl__20C1E124">
+        <Association Name="FK__Venta__numero_cl__34C8D9D1">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -299,63 +299,63 @@
           <EntitySet Name="Tipo_pago" EntityType="Self.Tipo_pago" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Camaras__id_rol__35BCFE0A" Association="Self.FK__Camaras__id_rol__35BCFE0A">
+          <AssociationSet Name="FK__Camaras__id_rol__48CFD27E" Association="Self.FK__Camaras__id_rol__48CFD27E">
             <End Role="Rol" EntitySet="Rol" />
             <End Role="Camaras" EntitySet="Camaras" />
           </AssociationSet>
-          <AssociationSet Name="FK__Camaras__id_usua__34C8D9D1" Association="Self.FK__Camaras__id_usua__34C8D9D1">
+          <AssociationSet Name="FK__Camaras__id_usua__47DBAE45" Association="Self.FK__Camaras__id_usua__47DBAE45">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Camaras" EntitySet="Camaras" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_v__id_pr__2E1BDC42" Association="Self.FK__Detalle_v__id_pr__2E1BDC42">
+          <AssociationSet Name="FK__Detalle_v__id_pr__412EB0B6" Association="Self.FK__Detalle_v__id_pr__412EB0B6">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="Detalle_venta" EntitySet="Detalle_venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_v__id_ti__300424B4" Association="Self.FK__Detalle_v__id_ti__300424B4">
+          <AssociationSet Name="FK__Detalle_v__id_ti__4316F928" Association="Self.FK__Detalle_v__id_ti__4316F928">
             <End Role="Tipo_pago" EntitySet="Tipo_pago" />
             <End Role="Detalle_venta" EntitySet="Detalle_venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_v__id_ve__2F10007B" Association="Self.FK__Detalle_v__id_ve__2F10007B">
+          <AssociationSet Name="FK__Detalle_v__id_ve__4222D4EF" Association="Self.FK__Detalle_v__id_ve__4222D4EF">
             <End Role="Venta" EntitySet="Venta" />
             <End Role="Detalle_venta" EntitySet="Detalle_venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_v__numer__30F848ED" Association="Self.FK__Detalle_v__numer__30F848ED">
+          <AssociationSet Name="FK__Detalle_v__numer__440B1D61" Association="Self.FK__Detalle_v__numer__440B1D61">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Detalle_venta" EntitySet="Detalle_venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Pago__id_tipo_pa__1CF15040" Association="Self.FK__Pago__id_tipo_pa__1CF15040">
+          <AssociationSet Name="FK__Pago__id_tipo_pa__30F848ED" Association="Self.FK__Pago__id_tipo_pa__30F848ED">
             <End Role="Tipo_pago" EntitySet="Tipo_pago" />
             <End Role="Pago" EntitySet="Pago" />
           </AssociationSet>
-          <AssociationSet Name="FK__Pago__numero_cli__1BFD2C07" Association="Self.FK__Pago__numero_cli__1BFD2C07">
+          <AssociationSet Name="FK__Pago__numero_cli__300424B4" Association="Self.FK__Pago__numero_cli__300424B4">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Pago" EntitySet="Pago" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reportes__id_alm__3B75D760" Association="Self.FK__Reportes__id_alm__3B75D760">
+          <AssociationSet Name="FK__Reportes__id_alm__4E88ABD4" Association="Self.FK__Reportes__id_alm__4E88ABD4">
             <End Role="Almacen" EntitySet="Almacen" />
             <End Role="Reportes" EntitySet="Reportes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reportes__id_usu__398D8EEE" Association="Self.FK__Reportes__id_usu__398D8EEE">
+          <AssociationSet Name="FK__Reportes__id_usu__4CA06362" Association="Self.FK__Reportes__id_usu__4CA06362">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Reportes" EntitySet="Reportes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reportes__id_ven__3A81B327" Association="Self.FK__Reportes__id_ven__3A81B327">
+          <AssociationSet Name="FK__Reportes__id_ven__4D94879B" Association="Self.FK__Reportes__id_ven__4D94879B">
             <End Role="Venta" EntitySet="Venta" />
             <End Role="Reportes" EntitySet="Reportes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__id_rol__145C0A3F" Association="Self.FK__Usuario__id_rol__145C0A3F">
+          <AssociationSet Name="FK__Usuario__id_rol__286302EC" Association="Self.FK__Usuario__id_rol__286302EC">
             <End Role="Rol" EntitySet="Rol" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta__id_pago__22AA2996" Association="Self.FK__Venta__id_pago__22AA2996">
+          <AssociationSet Name="FK__Venta__id_pago__36B12243" Association="Self.FK__Venta__id_pago__36B12243">
             <End Role="Pago" EntitySet="Pago" />
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta__id_usuari__21B6055D" Association="Self.FK__Venta__id_usuari__21B6055D">
+          <AssociationSet Name="FK__Venta__id_usuari__35BCFE0A" Association="Self.FK__Venta__id_usuari__35BCFE0A">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta__numero_cl__20C1E124" Association="Self.FK__Venta__numero_cl__20C1E124">
+          <AssociationSet Name="FK__Venta__numero_cl__34C8D9D1" Association="Self.FK__Venta__numero_cl__34C8D9D1">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>
@@ -373,7 +373,7 @@
           <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="telefono" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Reportes" Relationship="Self.FK__Reportes__id_alm__3B75D760" FromRole="Almacen" ToRole="Reportes" />
+          <NavigationProperty Name="Reportes" Relationship="Self.FK__Reportes__id_alm__4E88ABD4" FromRole="Almacen" ToRole="Reportes" />
         </EntityType>
         <EntityType Name="Camaras">
           <Key>
@@ -383,8 +383,8 @@
           <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
           <Property Name="id_rol" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Rol" Relationship="Self.FK__Camaras__id_rol__35BCFE0A" FromRole="Camaras" ToRole="Rol" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Camaras__id_usua__34C8D9D1" FromRole="Camaras" ToRole="Usuario" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK__Camaras__id_rol__48CFD27E" FromRole="Camaras" ToRole="Rol" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Camaras__id_usua__47DBAE45" FromRole="Camaras" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Cliente">
           <Key>
@@ -392,9 +392,9 @@
           </Key>
           <Property Name="numero_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Detalle_venta" Relationship="Self.FK__Detalle_v__numer__30F848ED" FromRole="Cliente" ToRole="Detalle_venta" />
-          <NavigationProperty Name="Pago" Relationship="Self.FK__Pago__numero_cli__1BFD2C07" FromRole="Cliente" ToRole="Pago" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK__Venta__numero_cl__20C1E124" FromRole="Cliente" ToRole="Venta" />
+          <NavigationProperty Name="Detalle_venta" Relationship="Self.FK__Detalle_v__numer__440B1D61" FromRole="Cliente" ToRole="Detalle_venta" />
+          <NavigationProperty Name="Pago" Relationship="Self.FK__Pago__numero_cli__300424B4" FromRole="Cliente" ToRole="Pago" />
+          <NavigationProperty Name="Venta" Relationship="Self.FK__Venta__numero_cl__34C8D9D1" FromRole="Cliente" ToRole="Venta" />
         </EntityType>
         <EntityType Name="Detalle_venta">
           <Key>
@@ -406,10 +406,10 @@
           <Property Name="id_venta" Type="Int32" Nullable="false" />
           <Property Name="id_tipo_pago" Type="Int32" Nullable="false" />
           <Property Name="numero_cliente" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Cliente" Relationship="Self.FK__Detalle_v__numer__30F848ED" FromRole="Detalle_venta" ToRole="Cliente" />
-          <NavigationProperty Name="Producto" Relationship="Self.FK__Detalle_v__id_pr__2E1BDC42" FromRole="Detalle_venta" ToRole="Producto" />
-          <NavigationProperty Name="Tipo_pago" Relationship="Self.FK__Detalle_v__id_ti__300424B4" FromRole="Detalle_venta" ToRole="Tipo_pago" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK__Detalle_v__id_ve__2F10007B" FromRole="Detalle_venta" ToRole="Venta" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK__Detalle_v__numer__440B1D61" FromRole="Detalle_venta" ToRole="Cliente" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__Detalle_v__id_pr__412EB0B6" FromRole="Detalle_venta" ToRole="Producto" />
+          <NavigationProperty Name="Tipo_pago" Relationship="Self.FK__Detalle_v__id_ti__4316F928" FromRole="Detalle_venta" ToRole="Tipo_pago" />
+          <NavigationProperty Name="Venta" Relationship="Self.FK__Detalle_v__id_ve__4222D4EF" FromRole="Detalle_venta" ToRole="Venta" />
         </EntityType>
         <EntityType Name="Pago">
           <Key>
@@ -419,9 +419,9 @@
           <Property Name="numero_cliente" Type="Int32" Nullable="false" />
           <Property Name="fecha" Type="DateTime" Precision="3" />
           <Property Name="id_tipo_pago" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Cliente" Relationship="Self.FK__Pago__numero_cli__1BFD2C07" FromRole="Pago" ToRole="Cliente" />
-          <NavigationProperty Name="Tipo_pago" Relationship="Self.FK__Pago__id_tipo_pa__1CF15040" FromRole="Pago" ToRole="Tipo_pago" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK__Venta__id_pago__22AA2996" FromRole="Pago" ToRole="Venta" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK__Pago__numero_cli__300424B4" FromRole="Pago" ToRole="Cliente" />
+          <NavigationProperty Name="Tipo_pago" Relationship="Self.FK__Pago__id_tipo_pa__30F848ED" FromRole="Pago" ToRole="Tipo_pago" />
+          <NavigationProperty Name="Venta" Relationship="Self.FK__Venta__id_pago__36B12243" FromRole="Pago" ToRole="Venta" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
@@ -431,7 +431,7 @@
           <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="precio" Type="Int32" Nullable="false" />
           <Property Name="stock" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Detalle_venta" Relationship="Self.FK__Detalle_v__id_pr__2E1BDC42" FromRole="Producto" ToRole="Detalle_venta" />
+          <NavigationProperty Name="Detalle_venta" Relationship="Self.FK__Detalle_v__id_pr__412EB0B6" FromRole="Producto" ToRole="Detalle_venta" />
         </EntityType>
         <EntityType Name="Reportes">
           <Key>
@@ -443,9 +443,9 @@
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
           <Property Name="id_venta" Type="Int32" Nullable="false" />
           <Property Name="id_almacen" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Almacen" Relationship="Self.FK__Reportes__id_alm__3B75D760" FromRole="Reportes" ToRole="Almacen" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Reportes__id_usu__398D8EEE" FromRole="Reportes" ToRole="Usuario" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK__Reportes__id_ven__3A81B327" FromRole="Reportes" ToRole="Venta" />
+          <NavigationProperty Name="Almacen" Relationship="Self.FK__Reportes__id_alm__4E88ABD4" FromRole="Reportes" ToRole="Almacen" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Reportes__id_usu__4CA06362" FromRole="Reportes" ToRole="Usuario" />
+          <NavigationProperty Name="Venta" Relationship="Self.FK__Reportes__id_ven__4D94879B" FromRole="Reportes" ToRole="Venta" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
@@ -453,8 +453,8 @@
           </Key>
           <Property Name="id_rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Camaras" Relationship="Self.FK__Camaras__id_rol__35BCFE0A" FromRole="Rol" ToRole="Camaras" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__id_rol__145C0A3F" FromRole="Rol" ToRole="Usuario" />
+          <NavigationProperty Name="Camaras" Relationship="Self.FK__Camaras__id_rol__48CFD27E" FromRole="Rol" ToRole="Camaras" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__id_rol__286302EC" FromRole="Rol" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Tipo_pago">
           <Key>
@@ -462,8 +462,8 @@
           </Key>
           <Property Name="id_tipo_pago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Detalle_venta" Relationship="Self.FK__Detalle_v__id_ti__300424B4" FromRole="Tipo_pago" ToRole="Detalle_venta" />
-          <NavigationProperty Name="Pago" Relationship="Self.FK__Pago__id_tipo_pa__1CF15040" FromRole="Tipo_pago" ToRole="Pago" />
+          <NavigationProperty Name="Detalle_venta" Relationship="Self.FK__Detalle_v__id_ti__4316F928" FromRole="Tipo_pago" ToRole="Detalle_venta" />
+          <NavigationProperty Name="Pago" Relationship="Self.FK__Pago__id_tipo_pa__30F848ED" FromRole="Tipo_pago" ToRole="Pago" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -477,10 +477,10 @@
           <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="numero_telefonico" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="id_rol" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Camaras" Relationship="Self.FK__Camaras__id_usua__34C8D9D1" FromRole="Usuario" ToRole="Camaras" />
-          <NavigationProperty Name="Reportes" Relationship="Self.FK__Reportes__id_usu__398D8EEE" FromRole="Usuario" ToRole="Reportes" />
-          <NavigationProperty Name="Rol" Relationship="Self.FK__Usuario__id_rol__145C0A3F" FromRole="Usuario" ToRole="Rol" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK__Venta__id_usuari__21B6055D" FromRole="Usuario" ToRole="Venta" />
+          <NavigationProperty Name="Camaras" Relationship="Self.FK__Camaras__id_usua__47DBAE45" FromRole="Usuario" ToRole="Camaras" />
+          <NavigationProperty Name="Reportes" Relationship="Self.FK__Reportes__id_usu__4CA06362" FromRole="Usuario" ToRole="Reportes" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK__Usuario__id_rol__286302EC" FromRole="Usuario" ToRole="Rol" />
+          <NavigationProperty Name="Venta" Relationship="Self.FK__Venta__id_usuari__35BCFE0A" FromRole="Usuario" ToRole="Venta" />
         </EntityType>
         <EntityType Name="Venta">
           <Key>
@@ -491,13 +491,13 @@
           <Property Name="numero_cliente" Type="Int32" Nullable="false" />
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
           <Property Name="id_pago" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Cliente" Relationship="Self.FK__Venta__numero_cl__20C1E124" FromRole="Venta" ToRole="Cliente" />
-          <NavigationProperty Name="Detalle_venta" Relationship="Self.FK__Detalle_v__id_ve__2F10007B" FromRole="Venta" ToRole="Detalle_venta" />
-          <NavigationProperty Name="Pago" Relationship="Self.FK__Venta__id_pago__22AA2996" FromRole="Venta" ToRole="Pago" />
-          <NavigationProperty Name="Reportes" Relationship="Self.FK__Reportes__id_ven__3A81B327" FromRole="Venta" ToRole="Reportes" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Venta__id_usuari__21B6055D" FromRole="Venta" ToRole="Usuario" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK__Venta__numero_cl__34C8D9D1" FromRole="Venta" ToRole="Cliente" />
+          <NavigationProperty Name="Detalle_venta" Relationship="Self.FK__Detalle_v__id_ve__4222D4EF" FromRole="Venta" ToRole="Detalle_venta" />
+          <NavigationProperty Name="Pago" Relationship="Self.FK__Venta__id_pago__36B12243" FromRole="Venta" ToRole="Pago" />
+          <NavigationProperty Name="Reportes" Relationship="Self.FK__Reportes__id_ven__4D94879B" FromRole="Venta" ToRole="Reportes" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Venta__id_usuari__35BCFE0A" FromRole="Venta" ToRole="Usuario" />
         </EntityType>
-        <Association Name="FK__Reportes__id_alm__3B75D760">
+        <Association Name="FK__Reportes__id_alm__4E88ABD4">
           <End Role="Almacen" Type="Self.Almacen" Multiplicity="1" />
           <End Role="Reportes" Type="Self.Reportes" Multiplicity="*" />
           <ReferentialConstraint>
@@ -509,7 +509,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Camaras__id_rol__35BCFE0A">
+        <Association Name="FK__Camaras__id_rol__48CFD27E">
           <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
           <End Role="Camaras" Type="Self.Camaras" Multiplicity="*" />
           <ReferentialConstraint>
@@ -521,7 +521,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Camaras__id_usua__34C8D9D1">
+        <Association Name="FK__Camaras__id_usua__47DBAE45">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Camaras" Type="Self.Camaras" Multiplicity="*" />
           <ReferentialConstraint>
@@ -533,7 +533,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_v__numer__30F848ED">
+        <Association Name="FK__Detalle_v__numer__440B1D61">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="Detalle_venta" Type="Self.Detalle_venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -545,7 +545,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Pago__numero_cli__1BFD2C07">
+        <Association Name="FK__Pago__numero_cli__300424B4">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="Pago" Type="Self.Pago" Multiplicity="*" />
           <ReferentialConstraint>
@@ -557,7 +557,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta__numero_cl__20C1E124">
+        <Association Name="FK__Venta__numero_cl__34C8D9D1">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -569,7 +569,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_v__id_pr__2E1BDC42">
+        <Association Name="FK__Detalle_v__id_pr__412EB0B6">
           <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
           <End Role="Detalle_venta" Type="Self.Detalle_venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -581,7 +581,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_v__id_ti__300424B4">
+        <Association Name="FK__Detalle_v__id_ti__4316F928">
           <End Role="Tipo_pago" Type="Self.Tipo_pago" Multiplicity="1" />
           <End Role="Detalle_venta" Type="Self.Detalle_venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -593,7 +593,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_v__id_ve__2F10007B">
+        <Association Name="FK__Detalle_v__id_ve__4222D4EF">
           <End Role="Venta" Type="Self.Venta" Multiplicity="1" />
           <End Role="Detalle_venta" Type="Self.Detalle_venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -605,7 +605,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Pago__id_tipo_pa__1CF15040">
+        <Association Name="FK__Pago__id_tipo_pa__30F848ED">
           <End Role="Tipo_pago" Type="Self.Tipo_pago" Multiplicity="1" />
           <End Role="Pago" Type="Self.Pago" Multiplicity="*" />
           <ReferentialConstraint>
@@ -617,7 +617,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta__id_pago__22AA2996">
+        <Association Name="FK__Venta__id_pago__36B12243">
           <End Role="Pago" Type="Self.Pago" Multiplicity="1" />
           <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -629,7 +629,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reportes__id_usu__398D8EEE">
+        <Association Name="FK__Reportes__id_usu__4CA06362">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Reportes" Type="Self.Reportes" Multiplicity="*" />
           <ReferentialConstraint>
@@ -641,7 +641,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reportes__id_ven__3A81B327">
+        <Association Name="FK__Reportes__id_ven__4D94879B">
           <End Role="Venta" Type="Self.Venta" Multiplicity="1" />
           <End Role="Reportes" Type="Self.Reportes" Multiplicity="*" />
           <ReferentialConstraint>
@@ -653,7 +653,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__id_rol__145C0A3F">
+        <Association Name="FK__Usuario__id_rol__286302EC">
           <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -665,7 +665,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta__id_usuari__21B6055D">
+        <Association Name="FK__Venta__id_usuari__35BCFE0A">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -689,63 +689,63 @@
           <EntitySet Name="Tipo_pago" EntityType="Self.Tipo_pago" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
           <EntitySet Name="Venta" EntityType="Self.Venta" />
-          <AssociationSet Name="FK__Reportes__id_alm__3B75D760" Association="Self.FK__Reportes__id_alm__3B75D760">
+          <AssociationSet Name="FK__Reportes__id_alm__4E88ABD4" Association="Self.FK__Reportes__id_alm__4E88ABD4">
             <End Role="Almacen" EntitySet="Almacen" />
             <End Role="Reportes" EntitySet="Reportes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Camaras__id_rol__35BCFE0A" Association="Self.FK__Camaras__id_rol__35BCFE0A">
+          <AssociationSet Name="FK__Camaras__id_rol__48CFD27E" Association="Self.FK__Camaras__id_rol__48CFD27E">
             <End Role="Rol" EntitySet="Rol" />
             <End Role="Camaras" EntitySet="Camaras" />
           </AssociationSet>
-          <AssociationSet Name="FK__Camaras__id_usua__34C8D9D1" Association="Self.FK__Camaras__id_usua__34C8D9D1">
+          <AssociationSet Name="FK__Camaras__id_usua__47DBAE45" Association="Self.FK__Camaras__id_usua__47DBAE45">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Camaras" EntitySet="Camaras" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_v__numer__30F848ED" Association="Self.FK__Detalle_v__numer__30F848ED">
+          <AssociationSet Name="FK__Detalle_v__numer__440B1D61" Association="Self.FK__Detalle_v__numer__440B1D61">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Detalle_venta" EntitySet="Detalle_venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Pago__numero_cli__1BFD2C07" Association="Self.FK__Pago__numero_cli__1BFD2C07">
+          <AssociationSet Name="FK__Pago__numero_cli__300424B4" Association="Self.FK__Pago__numero_cli__300424B4">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Pago" EntitySet="Pago" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta__numero_cl__20C1E124" Association="Self.FK__Venta__numero_cl__20C1E124">
+          <AssociationSet Name="FK__Venta__numero_cl__34C8D9D1" Association="Self.FK__Venta__numero_cl__34C8D9D1">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_v__id_pr__2E1BDC42" Association="Self.FK__Detalle_v__id_pr__2E1BDC42">
+          <AssociationSet Name="FK__Detalle_v__id_pr__412EB0B6" Association="Self.FK__Detalle_v__id_pr__412EB0B6">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="Detalle_venta" EntitySet="Detalle_venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_v__id_ti__300424B4" Association="Self.FK__Detalle_v__id_ti__300424B4">
+          <AssociationSet Name="FK__Detalle_v__id_ti__4316F928" Association="Self.FK__Detalle_v__id_ti__4316F928">
             <End Role="Tipo_pago" EntitySet="Tipo_pago" />
             <End Role="Detalle_venta" EntitySet="Detalle_venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_v__id_ve__2F10007B" Association="Self.FK__Detalle_v__id_ve__2F10007B">
+          <AssociationSet Name="FK__Detalle_v__id_ve__4222D4EF" Association="Self.FK__Detalle_v__id_ve__4222D4EF">
             <End Role="Venta" EntitySet="Venta" />
             <End Role="Detalle_venta" EntitySet="Detalle_venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Pago__id_tipo_pa__1CF15040" Association="Self.FK__Pago__id_tipo_pa__1CF15040">
+          <AssociationSet Name="FK__Pago__id_tipo_pa__30F848ED" Association="Self.FK__Pago__id_tipo_pa__30F848ED">
             <End Role="Tipo_pago" EntitySet="Tipo_pago" />
             <End Role="Pago" EntitySet="Pago" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta__id_pago__22AA2996" Association="Self.FK__Venta__id_pago__22AA2996">
+          <AssociationSet Name="FK__Venta__id_pago__36B12243" Association="Self.FK__Venta__id_pago__36B12243">
             <End Role="Pago" EntitySet="Pago" />
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reportes__id_usu__398D8EEE" Association="Self.FK__Reportes__id_usu__398D8EEE">
+          <AssociationSet Name="FK__Reportes__id_usu__4CA06362" Association="Self.FK__Reportes__id_usu__4CA06362">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Reportes" EntitySet="Reportes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reportes__id_ven__3A81B327" Association="Self.FK__Reportes__id_ven__3A81B327">
+          <AssociationSet Name="FK__Reportes__id_ven__4D94879B" Association="Self.FK__Reportes__id_ven__4D94879B">
             <End Role="Venta" EntitySet="Venta" />
             <End Role="Reportes" EntitySet="Reportes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__id_rol__145C0A3F" Association="Self.FK__Usuario__id_rol__145C0A3F">
+          <AssociationSet Name="FK__Usuario__id_rol__286302EC" Association="Self.FK__Usuario__id_rol__286302EC">
             <End Role="Rol" EntitySet="Rol" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta__id_usuari__21B6055D" Association="Self.FK__Venta__id_usuari__21B6055D">
+          <AssociationSet Name="FK__Venta__id_usuari__35BCFE0A" Association="Self.FK__Venta__id_usuari__35BCFE0A">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>

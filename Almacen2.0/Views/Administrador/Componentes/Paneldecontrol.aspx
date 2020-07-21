@@ -91,7 +91,7 @@
                     <div class="inner">
                         <h3></h3>
 
-                        <p>Productos Almacén</p>
+                        <p>Productos</p>
                     </div>
                     <div class="icon">
                         <i class="glyphicon glyphicon-home"></i>

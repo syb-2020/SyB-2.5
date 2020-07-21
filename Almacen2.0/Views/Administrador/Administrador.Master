@@ -33,7 +33,7 @@
                                 <span class="sr-only">Toggle navigation</span>
                             </a>
 
-                            <div class="navbar-custom-menu">
+                            <div id="Logo" class="navbar-custom-menu">
                                 <ul class="nav navbar-nav">
                                     <!-- Messages: style can be found in dropdown.less-->
 
@@ -60,7 +60,7 @@
                                             <!-- Menu Footer-->
                                             <li class="user-footer">
                                                 <div class="pull-right">
-                                                    <a href="../../../default.aspx" class="btn btn-default btn-flat">Cerrar Sesión</a>
+                                                    <a href="../../../default.aspx" id="cerrarcesion" class="btn btn-default btn-flat">Cerrar Sesión</a>
                                                 </div>
                                             </li>
                                         </ul>
@@ -96,11 +96,11 @@
                             <ul class="sidebar-menu" data-widget="tree">
                                 <li class="header" style="color: #fff; border-top: #fff 1px solid; border-bottom: #fff 1px solid">MENU</li>
 
-                                <li><a href="Productos.aspx"><i class="glyphicon glyphicon-home"></i><span>Productos Almacén</span></a></li>
+                                <li><a id="Productos" href="Productos.aspx"><i class="glyphicon glyphicon-home"></i><span>Productos</span></a></li>
                                 <li><a href="Reportes.aspx"><i class="glyphicon glyphicon-list-alt"></i><span>Reportes</span></a></li>
-                                <li><a href="Usuarios.aspx"><i class="glyphicon glyphicon-user"></i><span>Usuarios</span></a></li>
+                                <li><a id="Usuarios" href="Usuarios.aspx"><i class="glyphicon glyphicon-user"></i><span>Usuarios</span></a></li>
                                 <li><a href="Camaras.aspx"><i class="glyphicon glyphicon-facetime-video"></i><span>Camaras</span></a></li>
-                                <li><a href="Generarventa.aspx"><i class="glyphicon glyphicon-shopping-cart"></i><span>Generar Venta</span></a></li>
+                                <li><a id="Generar_Venta" href="Generarventa.aspx"><i class="glyphicon glyphicon-shopping-cart"></i><span>Generar Venta</span></a></li>
                                 <li><a href="Paneldecontrol.aspx"><i class="glyphicon glyphicon-th"></i><span>Panel de control</span></a></li>
                             </ul>
                         </section>
@@ -154,7 +154,13 @@
                     <div class="control-sidebar-bg"></div>
 
 
-
+                    <script>                       
+                        window.setTimeout(function () {
+                            $(".Alerta").fadeTo(500, 0).slideUp(500, function () {
+                                $(this).remove();
+                            });
+                        }, 5000);
+                    </script>
                     <!-- ./wrapper -->
 
                     <!-- jQuery 3 -->

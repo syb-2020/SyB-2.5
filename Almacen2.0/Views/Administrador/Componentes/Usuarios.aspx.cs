@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -22,7 +22,18 @@ namespace Almacen2._0.Views.Administrador.Componentes
                 idrol.DataBind();             
             }
         }
-
+        private void mensajeAlertaSuccess(bool estadoAlerta, string mensaje)
+        {
+            Alerta.Visible = estadoAlerta;
+            Alerta.CssClass = "alert alert-success";
+            lbAlerta.Text = mensaje;
+        }
+        private void mensajeAlertaDanger(bool estadoAlerta, string mensaje)
+        {
+            Alerta.Visible = estadoAlerta;
+            Alerta.CssClass = "alert alert-danger";
+            lbAlerta.Text = mensaje;          
+        }
         protected void idAdd_Click(object sender, EventArgs e)
         {
             try
@@ -34,27 +45,25 @@ namespace Almacen2._0.Views.Administrador.Componentes
                     nombre = tnombre.Text,
                     apellido = tapellido.Text,
                     direccion = tdireccion.Text,
+                    numero_telefonico =ttelefono.Text,
                     id_rol = Convert.ToInt32(idrol.SelectedItem.Value)
                 };
 
                 context.Usuario.Add(nuevo);
                 context.SaveChanges();
 
-                Alerta.Visible = true;
-                Alerta.CssClass = "alert alert-success";
-                lbAlerta.Text = "Usuario Agregado ";
+                mensajeAlertaSuccess(true, "Usuario Agregado ");                
 
                 temail.Text = "";
                 tclave.Text = "";
                 tnombre.Text = "";
                 tapellido.Text = "";
-                tdireccion.Text = "";                               
+                tdireccion.Text = "";
+                ttelefono.Text = "";
             }
             catch (Exception)
             {
-                Alerta.Visible = true;
-                Alerta.CssClass = "alert alert-danger";
-                lbAlerta.Text = "Usuario NO! Agregado ";
+                mensajeAlertaDanger(true,"Usuario NO! Agregado ");                
 
             }
         }
@@ -70,27 +79,27 @@ namespace Almacen2._0.Views.Administrador.Componentes
                 users.nombre = tnombre.Text;
                 users.apellido = tapellido.Text;
                 users.direccion = tdireccion.Text;
+                users.numero_telefonico = ttelefono.Text;
                 users.id_rol = Convert.ToInt32(idrol.SelectedItem.Value);
 
 
                 context.SaveChanges();
+               
+                mensajeAlertaSuccess(true, "Usuario Modificado ");
 
-                Alerta2.Visible = true;
-                Alerta2.CssClass = "alert alert-success";
-                lbAlerta.Text = "Usuario Modificado ";
+                Thread.Sleep(5000);
 
                 temail.Text = "";
                 tclave.Text = "";
                 tnombre.Text = "";
                 tapellido.Text = "";
-                tdireccion.Text = ""; 
+                tdireccion.Text = "";
+                ttelefono.Text = "";
 
             }
             catch (Exception)
-            {
-                Alerta2.Visible = true;
-                Alerta2.CssClass = "alert alert-danger";
-                lbAlerta2.Text = "Usuario NO! Modificado ";
+            {              
+                mensajeAlertaDanger(true,"Usuario NO! Modificado ");
             }
         }
 
@@ -102,53 +111,45 @@ namespace Almacen2._0.Views.Administrador.Componentes
                 users.id_usuario = Convert.ToInt32(t_id_usuario.Text);                
                 context.Usuario.Remove(context.Usuario.Find(users.id_usuario));
                 context.SaveChanges();
-
-                Alerta2.Visible = true;
-                Alerta2.CssClass = "alert alert-success";
-                lbAlerta2.Text = "Usuario Eliminado ";
+              
+                mensajeAlertaSuccess(true, "Usuario Eliminado ");
+               
             }
             catch (Exception)
-            {
-                Alerta2.Visible = true;
-                Alerta2.CssClass = "alert alert-danger";
-                lbAlerta2.Text = "Usuario NO! Eliminado ";
+            {                
+                mensajeAlertaDanger(true, "Usuario NO! Eliminado ");
             }
         }
 
         protected void idbuscar_Click(object sender, EventArgs e)
         {
-           
-
             string buscarnombre = t_id_usuario.Text;
-            
+
             var listNombre = from litpr in context.Usuario
-                              where litpr.nombre.StartsWith(buscarnombre)
-                              select litpr;
-            if (listNombre != null)
-            {
-                //temail.Text = users.email;
-                //tnombre.Text = users.nombre;
-                //tapellido.Text = users.apellido;
-                //tdireccion.Text = users.direccion;
-                
+                             where litpr.nombre.StartsWith(buscarnombre)
+                             select litpr;
+
+            //temail.Text = users.email;
+            //tnombre.Text = users.nombre;
+            //tapellido.Text = users.apellido;
+            //tdireccion.Text = users.direccion;           
+
+            if (listNombre.Count() != 0)
+            {               
+                mensajeAlertaSuccess(true, "Usuario Encontrado ");
                 idtablatrabajador.DataSource = listNombre.ToList();
                 idtablatrabajador.DataBind();
-                Alerta2.Visible = true;                
-                Alerta2.CssClass = "alert alert-success";
-                lbAlerta2.Text = "Usuario Encontrado ";                
             }
             else
-            {
-                temail.Text = "";
-                tclave.Text = "";
-                tnombre.Text = "";
-                tapellido.Text = "";
-                tdireccion.Text = "";
-
-                Alerta2.Visible = true;
-                Alerta2.CssClass = "alert alert-danger";
-                lbAlerta2.Text = "Usuario NO! Encontrado ";
+            {                
+                mensajeAlertaDanger(true, "Usuario NO! Encontrado ");
             }
+
+            //temail.Text = "";
+            //tclave.Text = "";
+            //tnombre.Text = "";
+            //tapellido.Text = "";
+            //tdireccion.Text = "";           
         }
 
         protected void idtablatrabajador_RowCommand(object sender, GridViewCommandEventArgs e)

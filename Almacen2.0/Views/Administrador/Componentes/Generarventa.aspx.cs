@@ -38,6 +38,18 @@ namespace Almacen2._0.Views.Administrador.Componentes
 
 
 		}
+		private void mensajeAlertaSuccess(bool estadoAlerta, string mensaje)
+		{
+			Alerta.Visible = estadoAlerta;
+			Alerta.CssClass = "alert alert-success";
+			lbAlerta.Text = mensaje;
+		}
+		private void mensajeAlertaDanger(bool estadoAlerta, string mensaje)
+		{
+			Alerta.Visible = estadoAlerta;
+			Alerta.CssClass = "alert alert-danger";
+			lbAlerta.Text = mensaje;
+		}
 
 		protected void idbuscar_Click1(object sender, EventArgs e)
 		{
@@ -58,7 +70,7 @@ namespace Almacen2._0.Views.Administrador.Componentes
 					{
 
 						agregarCompleto(producto);
-						sumaTotal();
+						sumaTotal();											
 						Thread.Sleep(200);
 						producto.stock = producto.stock - 1;
 						contexto.SaveChanges();
@@ -186,15 +198,26 @@ namespace Almacen2._0.Views.Administrador.Componentes
 		private void sumaTotal() {
 
 
-			int total = 0;
-
+			int total = 0;			
 			foreach (var item in carro)
 			{
 
-				total += item.stock * item.precio;
-			}
+				total += item.stock * item.precio;				
+			}			
+
 			mostrarPrecio.Text = total.ToString();
 		}
+		private void descuento()
+        {
+			
+			int total = Convert.ToInt32(mostrarPrecio.Text);
+			double descuento = Convert.ToInt32(txtdescuento.Text);
+			double porcentaje = (total / 100) * descuento;
+			double total2 = total - porcentaje;
+
+			mostrarPrecio.Text = total2.ToString();
+			txtdescuento.Text = "";
+        }
 
 		protected void cancelarVenta_Click(object sender, EventArgs e)
 		{
@@ -206,9 +229,8 @@ namespace Almacen2._0.Views.Administrador.Componentes
                 tcodigo.Text = "";
                 tcodigo.Focus();
                 mostrarPrecio.Text = "0";
-                Alerta.Visible = true;
-                Alerta.CssClass = "alert alert-danger";
-                lbAlerta.Text = "Operacion Cancelada ";
+
+				mensajeAlertaDanger(true, "Operacion Cancelada");                
             }
         }
 
@@ -218,6 +240,11 @@ namespace Almacen2._0.Views.Administrador.Componentes
 		static Venta nuevoVenta = new Venta();
 		static Detalle_venta nuevoDetalleVenta = new Detalle_venta();
 
+		
+		protected void aplicarDescuento_Click(object sender, EventArgs e)
+		{
+			descuento();
+		}
 		protected void agregarVenta_Click(object sender, EventArgs e)
 		{
 			int num_cliente = 0;
@@ -228,15 +255,15 @@ namespace Almacen2._0.Views.Administrador.Componentes
 				string detalle = "";
 				foreach (var item2 in carro)
 				{
-					detalle += item2.stock +" "+item2.nombre+"\r\n";                  
+					detalle += item2.stock + " " + item2.nombre + "\r\n";
 
-                }
+				}
 
-                nuevoCliente = new Cliente
-                {
-                    numero_cliente = 1,
-                    descripcion = detalle + "\r\n"
-                };
+				nuevoCliente = new Cliente
+				{
+					numero_cliente = 1,
+					descripcion = detalle + "\r\n"
+				};
 				contextoCliente.Cliente.Add(nuevoCliente);
 
 				contextoCliente.SaveChanges();
@@ -256,7 +283,7 @@ namespace Almacen2._0.Views.Administrador.Componentes
 				idpago = nuevoPago.id_pago;
 
 			}
-		
+
 			using (almacen_avance2Entities1 contextoVenta = new almacen_avance2Entities1())
 			{
 				nuevoVenta = new Venta
@@ -279,35 +306,33 @@ namespace Almacen2._0.Views.Administrador.Componentes
 					nuevoDetalleVenta.precio_venta = Convert.ToInt32(mostrarPrecio.Text);
 					nuevoDetalleVenta.id_producto = item.id_producto;
 					nuevoDetalleVenta.id_venta = num_venta;
-                    Session["id_venta_boleta"] = num_venta;
-                  
-					nuevoDetalleVenta.id_tipo_pago = Convert.ToInt32(idtipopago.SelectedItem.Value);
-                    nuevoDetalleVenta.numero_cliente = num_cliente;
-                    Session["num_cliente"] = num_cliente;
+					Session["id_venta_boleta"] = num_venta;
 
-                }
+					nuevoDetalleVenta.id_tipo_pago = Convert.ToInt32(idtipopago.SelectedItem.Value);
+					nuevoDetalleVenta.numero_cliente = num_cliente;
+					Session["num_cliente"] = num_cliente;
+
+				}
 				contextoDetalleVenta.Detalle_venta.Add(nuevoDetalleVenta);
 				contextoDetalleVenta.SaveChanges();
 			}
 
 
-            if (IsPostBack)
-            {
-                carro.Clear();
-                gridGenerarProducto.DataSource = carro;
-                gridGenerarProducto.DataBind();
-                tcodigo.Text = "";
-                tcodigo.Focus();
-                mostrarPrecio.Text = "0";
+			if (IsPostBack)
+			{
+				carro.Clear();
+				gridGenerarProducto.DataSource = carro;
+				gridGenerarProducto.DataBind();
+				tcodigo.Text = "";
+				tcodigo.Focus();
+				mostrarPrecio.Text = "0";
 
-                Alerta.Visible = true;
-                Alerta.CssClass = "alert alert-success";
-                lbAlerta.Text = "Venta Realizada ";
-            }
+				mensajeAlertaSuccess(true, "Venta Realizada");
+
+			}
 
 
-        }
-
+		}
 	}
 }
 

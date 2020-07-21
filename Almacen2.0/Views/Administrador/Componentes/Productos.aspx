@@ -33,7 +33,14 @@
 
     <!-- estilos de animación banner-->
         <link rel="stylesheet" type="text/css" href="../../bower_components/Style.css"/>
-    <style>         
+    <style>  
+            .msg {
+                    position: relative;
+                    float: right;
+                    width: 40%;
+                    clear: both;
+                    margin-top: -56px;                   
+             }            
            .gear {
                float: left;
                font-size: 30px;
@@ -87,7 +94,16 @@
 
     <!-- Main content -->
     <section class="content">
-
+        <div class="msg">
+                <asp:Panel ID="Alerta" runat="server" Visible="false">
+                <strong role="alert">
+                    <asp:Label ID="lbAlerta" runat="server" Text=""></asp:Label>
+                </strong>
+                <button type="button" id="msg" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </asp:Panel>
+        </div>
         <div class="row" style="margin-right: 0px; margin-left: 0px;">
             <div class="col-md-12">
 
@@ -136,16 +152,7 @@
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Ingrese solo numeros" ForeColor="red" Display="Dynamic" ControlToValidate="tstockproducto" ValidationExpression="^[0-9]+$" ValidationGroup="add2"></asp:RegularExpressionValidator>
                             </div>
                             <asp:Button runat="server" ID="idaddproducto" ValidationGroup="add2" OnClick="idaddproducto_Click"
-                                CssClass="btn btn-lg btn-success center-block"  Text="Agregar Producto" />
-                            <asp:Panel ID="Alerta" runat="server" Visible="false">
-                                <strong>
-                                    <asp:Label ID="lbAlerta" runat="server" Text=""></asp:Label>
-                                </strong>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </asp:Panel>
-
+                                CssClass="btn btn-lg btn-success center-block"  Text="Agregar Producto" />                            
                         </div>
 
 
@@ -175,15 +182,7 @@
                         <asp:Button ID="btnBuscar" CssClass="btn btn-lg btn-success center-block" ValidationGroup="add3" runat="server" Text="Buscar"
                             OnClick="btnBuscar_Click" />
                         
-                        <div class="col-md-5">
-                            <asp:Panel ID="panel_mensaje" Visible="false" runat="server">
-                                <strong>
-                                    <asp:Label ID="lbmensaje" runat="server" Text=""></asp:Label>
-                                </strong>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </asp:Panel>
+                        <div class="col-md-5">                           
                         </div>
                         <!-- /.nav-tabs-custom -->
                     </div>
@@ -212,7 +211,7 @@
                                     ButtonType="Link" CommandName="IdVer" Text="Seleccionar" HeaderText="Ver Producto" />
                                 <asp:ButtonField HeaderStyle-CssClass="text-center" ControlStyle-CssClass="btn btn-danger"
                                     ButtonType="Link" CommandName="IdEliminar" Text="Eliminar" HeaderText="Eliminar Producto" />
-                                <asp:ButtonField HeaderStyle-CssClass="text-center" ControlStyle-CssClass="btn btn-warning center"
+                                <asp:ButtonField HeaderStyle-CssClass="text-center"  ControlStyle-CssClass="btn btn-warning center"
                                     ButtonType="Link" CommandName="IdActualizar" Text="Editar" HeaderText="Actualizar Producto" />
                             </Columns>
                             <PagerSettings Mode="NumericFirstLast" PageButtonCount="8" FirstPageText="Primero"
@@ -225,15 +224,7 @@
                             </EmptyDataTemplate>
                         </asp:GridView>                       
                     </div>                    
-                </div>
-                <asp:Panel ID="panel_mensaje3" Visible="false" runat="server">
-                    <strong>
-                        <asp:Label ID="lbmensaje3" runat="server" Text=""> </asp:Label>
-                    </strong>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </asp:Panel>
+                </div>                
             </div>
             <!-- /.col -->
 

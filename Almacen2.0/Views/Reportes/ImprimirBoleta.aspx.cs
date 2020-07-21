@@ -23,8 +23,10 @@ namespace Almacen2._0.Views.Reportes
                 if (id_venta2 == item.id_venta)
                 {
                     txttotal.Text = Convert.ToString(item.precio_venta);
+
                     var result = from c in context.Cliente where c.numero_cliente.Equals(num_clie2) select new{ c.descripcion};
                     string descrip = result.ToList()[0].descripcion;
+
                     txtdescri.Text = descrip.Replace("\r\n", "\r\n");
                 }
             }

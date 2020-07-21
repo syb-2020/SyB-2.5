@@ -24,7 +24,18 @@ namespace Almacen2._0.Views.Administrador.Componentes
 
             };
         }
-
+        private void mensajeAlertaSuccess(bool estadoAlerta, string mensaje)
+        {
+            Alerta.Visible = estadoAlerta;
+            Alerta.CssClass = "alert alert-success";
+            lbAlerta.Text = mensaje;
+        }
+        private void mensajeAlertaDanger(bool estadoAlerta, string mensaje)
+        {
+            Alerta.Visible = estadoAlerta;
+            Alerta.CssClass = "alert alert-danger";
+            lbAlerta.Text = mensaje;
+        }
         //se llama al metodo creado para los productos, correspondiente a cargar datos de la lista de productos
         private void CargarData(int starIndex, int maxRows)
         {
@@ -50,9 +61,7 @@ namespace Almacen2._0.Views.Administrador.Componentes
         {
             GridView1.VirtualItemCount = Count();
             CargarData(1, 2);
-            panel_mensaje3.Visible = true;
-            panel_mensaje3.CssClass = "alert alert-success";
-            lbmensaje3.Text = "Producto encontrado";
+            mensajeAlertaSuccess(true, "Producto encontrado");           
         }
 
         //Servicio para poder ingresar un producto en el sistema
@@ -69,19 +78,15 @@ namespace Almacen2._0.Views.Administrador.Componentes
                 tnombreproducto.Text = "";
                 tprecioproducto.Text = "";
                 tstockproducto.Text = "";
-
-                Alerta.Visible = true;
-                Alerta.CssClass = "alert alert-success";
-                lbAlerta.Text = "Producto Agregado ";
+                mensajeAlertaSuccess(true, "Producto Agregado ");
+                
 
                 GridView1.DataSource = context.Producto.ToList();
                 GridView1.DataBind();
             }
             catch (Exception)
             {
-                Alerta.Visible = true;
-                Alerta.CssClass = "alert alert-danger";
-                lbAlerta.Text = "Producto NO! Agregado ";
+                mensajeAlertaDanger(true, "Producto NO! Agregado ");               
             }
         }
 
@@ -113,9 +118,7 @@ namespace Almacen2._0.Views.Administrador.Componentes
                 tprecioproducto.Text = precio.ToString();
                 tstockproducto.Text = stock.ToString();
 
-                panel_mensaje3.Visible = true;
-                panel_mensaje3.CssClass = "alert alert-success";
-                lbmensaje3.Text = "Datos Del Producto Seleccionado";
+                mensajeAlertaSuccess(true, "Datos Del Producto Seleccionado");                
             }
 
             if (e.CommandName.Equals("IdEliminar"))
@@ -134,9 +137,7 @@ namespace Almacen2._0.Views.Administrador.Componentes
                 context.Producto.Remove(context.Producto.Find(id));
                 context.SaveChanges();
 
-                panel_mensaje3.Visible = true;
-                panel_mensaje3.CssClass = "alert alert-success";
-                lbmensaje3.Text = "Producto Eliminado!!";
+                mensajeAlertaSuccess(true, "Producto Eliminado");               
 
                 GridView1.DataSource = context.Producto.ToList();
                 GridView1.DataBind();
@@ -162,9 +163,7 @@ namespace Almacen2._0.Views.Administrador.Componentes
                     nuevo2.stock = Convert.ToInt32(tstockproducto.Text);
                     context.SaveChanges();
 
-                    panel_mensaje3.Visible = true;
-                    panel_mensaje3.CssClass = "alert alert-success";
-                    lbmensaje3.Text = "Producto Editado!!";
+                    mensajeAlertaSuccess(true, "Producto Editado");                    
 
 
                     GridView1.DataSource = context.Producto.ToList();
@@ -174,9 +173,7 @@ namespace Almacen2._0.Views.Administrador.Componentes
                 }
                 catch (Exception)
                 {
-                    panel_mensaje3.Visible = true;
-                    panel_mensaje3.CssClass = "alert alert-danger";
-                    lbmensaje3.Text = "Error, verifique los campos";
+                    mensajeAlertaDanger(true, "Error, verifique los campos");                   
 
 
                 }

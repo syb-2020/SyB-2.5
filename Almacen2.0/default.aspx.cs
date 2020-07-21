@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Almacen2._0.Models;
-using Almacen2._0.Views.Administrador;
+using Almacen2._0.Views.Administrador.Metodos;
 
 namespace Almacen2._0.Pagina
 {
@@ -18,27 +18,32 @@ namespace Almacen2._0.Pagina
             Page.Form.Attributes.Add("enctype", "multipart/form-data");           
         }
 
-        protected void inicio_Click(object sender, EventArgs e)
+        public void inicio_Click(object sender, EventArgs e)
         {
             try
             {
                 string email = txtemail.Text;
                 string clave = txtpassword.Text;
-            
 
-                
+
+
 
                 var result = from c in context.Usuario
                              where c.clave.Equals(clave) && c.email.Equals(email)
-                             select new { c.id_rol, c.id_usuario , c.nombre ,c.apellido};
+                             select new { c.id_rol, c.id_usuario, c.nombre, c.apellido };
+
+                //var result = new IniciarSesion().buscarUsuario(email,clave);
+
                 if (result.ToList().Count ==0 )
                 {
                     panel_mensaje.Visible = true;
                     panel_mensaje.CssClass = "alert alert-danger";
-                    lbmensaje.Text = "Usuario no valido";
+                    lbmensaje.Text = "Usuario no valido";                                   
                 }
                 else
                 {
+                    //int test2 = new IniciarSesion().validacion(2);
+
                     int usuario_rol = result.ToList()[0].id_rol;
                     int usuario_id = result.ToList()[0].id_usuario;
                     string nombre5 = result.ToList()[0].nombre;
@@ -93,5 +98,6 @@ namespace Almacen2._0.Pagina
             }
 
         }
+        
     }
 }

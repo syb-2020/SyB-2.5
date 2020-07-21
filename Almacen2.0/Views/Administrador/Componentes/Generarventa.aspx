@@ -32,7 +32,14 @@
 
      <!-- estilos de animación banner-->
         <link rel="stylesheet" type="text/css" href="../../bower_components/Style.css"/>
-    <style>         
+    <style>    
+            .msg {
+                        position: relative;
+                        float: right;
+                        width: 40%;
+                        clear: both;
+                        margin-top: -56px;                   
+                 }     
            .gear {
                float: left;
                font-size: 30px;
@@ -84,6 +91,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="idprincipal" runat="server">
 
     <div class="content">
+        <div class="msg">
+                <asp:Panel ID="Alerta" runat="server" Visible="false">
+                <strong role="alert">
+                    <asp:Label ID="lbAlerta" runat="server" Text=""></asp:Label>
+                </strong>
+                <button type="button" id="msg" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </asp:Panel>
+        </div>
         <div class="row" style="margin-right: 0px; margin-left: 0px;">
             
             <%--<div class="col-md-4">
@@ -160,27 +177,33 @@
                         </div>
                         <asp:GridView runat="server" ID="tabladePago">
                             <HeaderStyle CssClass="btn-dark" />
-                        </asp:GridView>
-                        <br />
-                        <label>Precio Total </label>
-                        <asp:Button runat="server" ID="mostrarPrecio" CssClass="btn btn-dark" />
-                        <br />
-                        <br />
+                        </asp:GridView>                      
+                       <div class="col-md-3">
+                            <label>Precio Total </label>                        
+                        <asp:TextBox runat="server" ID="mostrarPrecio" CssClass="form-control"></asp:TextBox>
+                                                           <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Ingrese solo numeros positivos" ForeColor="red" Display="Dynamic" ControlToValidate="mostrarPrecio" ValidationExpression="^[0-9]+$" ValidationGroup="add2"></asp:RegularExpressionValidator>
 
-                        <div class="input-group-prepend text-center">
-                            <asp:Button runat="server" ID="agregarVenta" OnClick="agregarVenta_Click" Text="Pagar" CssClass="btn btn-lg btn-success margen1" />
+                       </div>
+                        <div class="col-md-3">                 
+                            <label>Descuento </label>                        
+                        <asp:TextBox runat="server" ID="txtdescuento" CssClass="form-control"></asp:TextBox>      
+                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Ingrese solo numeros positivos" ForeColor="red" Display="Dynamic" ControlToValidate="txtdescuento" ValidationExpression="^[0-9]+$" ValidationGroup="add6"></asp:RegularExpressionValidator>                            
+                       </div>
+                        <div class="col-md-2">
+                            <br />
+                            <asp:Button runat="server" ID="aplicarDescuento" ValidationGroup="add6" OnClick="aplicarDescuento_Click" Text="Aplicar" CssClass="btn btn-lg btn-success margen1" />
+                        </div>
+                        
+                     
+                       <div class="col-md-12">
+                           <br /><br />
+                            <div class="input-group-prepend text-center">
+                            <asp:Button runat="server" ID="agregarVenta" ValidationGroup="add2" OnClick="agregarVenta_Click" Text="Pagar" CssClass="btn btn-lg btn-success margen1" />
                             <asp:Button runat="server" ID="cancelarVenta" OnClick="cancelarVenta_Click" Text="Cancelar" CssClass="btn btn-lg btn-danger margen1" />
                             <a href="../../Reportes/ImprimirBoleta.aspx" target="_blank" class="btn btn-lg btn-default margen1"><i class="fa fa-print"></i>Boleta</a>
                         </div>
-
-                        <asp:Panel ID="Alerta" runat="server" Visible="false">
-                            <strong>
-                                <asp:Label ID="lbAlerta" runat="server" Text=""></asp:Label>
-                            </strong>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </asp:Panel>
+                       </div>
+                        
                     </div>
                 </div>
             </div>

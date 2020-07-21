@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1a3e462f8fb8420ca2724f1c000f72af" Name="Diagram1">
+      <Diagram DiagramId="d680822046754f8ca6933dace9b25a58" Name="Diagram1">
         <EntityTypeShape EntityType="almacen_avance2Model.Almacen" Width="1.5" PointX="8.25" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="almacen_avance2Model.Camaras" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="almacen_avance2Model.Cliente" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
@@ -16,21 +16,21 @@
         <EntityTypeShape EntityType="almacen_avance2Model.Tipo_pago" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
         <EntityTypeShape EntityType="almacen_avance2Model.Usuario" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="almacen_avance2Model.Venta" Width="1.5" PointX="8.25" PointY="7.375" IsExpanded="true" />
-        <AssociationConnector Association="almacen_avance2Model.FK__Reportes__id_alm__3B75D760" ManuallyRouted="false" />
-        <AssociationConnector Association="almacen_avance2Model.FK__Camaras__id_rol__35BCFE0A" ManuallyRouted="false" />
-        <AssociationConnector Association="almacen_avance2Model.FK__Camaras__id_usua__34C8D9D1" ManuallyRouted="false" />
-        <AssociationConnector Association="almacen_avance2Model.FK__Detalle_v__numer__30F848ED" ManuallyRouted="false" />
-        <AssociationConnector Association="almacen_avance2Model.FK__Pago__numero_cli__1BFD2C07" ManuallyRouted="false" />
-        <AssociationConnector Association="almacen_avance2Model.FK__Venta__numero_cl__20C1E124" ManuallyRouted="false" />
-        <AssociationConnector Association="almacen_avance2Model.FK__Detalle_v__id_pr__2E1BDC42" ManuallyRouted="false" />
-        <AssociationConnector Association="almacen_avance2Model.FK__Detalle_v__id_ti__300424B4" ManuallyRouted="false" />
-        <AssociationConnector Association="almacen_avance2Model.FK__Detalle_v__id_ve__2F10007B" ManuallyRouted="false" />
-        <AssociationConnector Association="almacen_avance2Model.FK__Pago__id_tipo_pa__1CF15040" ManuallyRouted="false" />
-        <AssociationConnector Association="almacen_avance2Model.FK__Venta__id_pago__22AA2996" ManuallyRouted="false" />
-        <AssociationConnector Association="almacen_avance2Model.FK__Reportes__id_usu__398D8EEE" ManuallyRouted="false" />
-        <AssociationConnector Association="almacen_avance2Model.FK__Reportes__id_ven__3A81B327" ManuallyRouted="false" />
-        <AssociationConnector Association="almacen_avance2Model.FK__Usuario__id_rol__145C0A3F" ManuallyRouted="false" />
-        <AssociationConnector Association="almacen_avance2Model.FK__Venta__id_usuari__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Reportes__id_alm__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Camaras__id_rol__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Camaras__id_usua__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Detalle_v__numer__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Pago__numero_cli__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Venta__numero_cl__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Detalle_v__id_pr__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Detalle_v__id_ti__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Detalle_v__id_ve__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Pago__id_tipo_pa__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Venta__id_pago__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Reportes__id_usu__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Reportes__id_ven__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Usuario__id_rol__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Venta__id_usuari__35BCFE0A" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

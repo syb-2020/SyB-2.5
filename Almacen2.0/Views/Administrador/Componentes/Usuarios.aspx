@@ -37,10 +37,23 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-
+    <script>                       
+        window.setTimeout(function () {
+            $(".Alerta").fadeTo(500, 0).slideUp(500, function () {
+                $(this).remove();
+            });
+        }, 5000);
+    </script>
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"/>
-    <style>         
+    <style>
+            .msg {
+                position: relative;
+                float: right;
+                width: 40%;
+                clear: both;
+                margin-top: -56px;
+            }            
            .gear {
                float: left;
                font-size: 30px;
@@ -81,6 +94,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="idprincipal" runat="server">
     <div class="content">
+        <div class="msg">
+            <asp:Panel ID="Alerta" runat="server" Visible="false">
+            <strong role="alert">
+                <asp:Label ID="lbAlerta" runat="server" Text=""></asp:Label>
+            </strong>
+            <button type="button" id="msg" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </asp:Panel>
+        </div>
         <div class="row" style="margin-right: 0px; margin-left: 0px;">
 
             <div class="col-md-12" style="margin-right: 0px; margin-left: 0px;">
@@ -125,22 +148,18 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="El campo es obligatorio" ForeColor="red" ControlToValidate="tdireccion" Display="Dynamic"
                                 ValidationGroup="add2"> </asp:RequiredFieldValidator>
                         </div>
-
+                        <div class="form-group">
+                            <label for="ttelefono">Numero Telefonico: </label>
+                            <asp:TextBox runat="server" ID="ttelefono" CssClass="form-control" placeholder="Numero Telefonico"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="El campo es obligatorio" ForeColor="red" ControlToValidate="ttelefono" Display="Dynamic"
+                                ValidationGroup="add2"> </asp:RequiredFieldValidator>
+                        </div>
                         <div class="form-group">
                             <label for="idrol">Rol</label>
                             <asp:DropDownList runat="server" ID="idrol" CssClass="form-control" DataTextField="nombre" DataValueField="id_rol"></asp:DropDownList>
                         </div>
 
-                        <asp:Button runat="server" ID="idAdd" ValidationGroup="add2" CssClass="btn btn-lg btn-success center-block" OnClick="idAdd_Click" Text="Agregar Usuario" />
-                        <asp:Panel ID="Alerta" runat="server" Visible="false">
-                            <strong role="alert">
-                                <asp:Label ID="lbAlerta" runat="server" Text=""></asp:Label>
-                            </strong>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </asp:Panel>
-
+                        <asp:Button runat="server" ID="idAdd" ValidationGroup="add2" CssClass="btn btn-lg btn-success center-block" OnClick="idAdd_Click" Text="Agregar Usuario" />                        
 
                     </div>
 
@@ -161,36 +180,28 @@
                     <div class="box-body box-profile">
                         <div class="form-group">
                             <label for="t_id_usuario">Nombre Usuario: </label>
-                            <div class="input-group col-md-12">
+                            <div class="col-md-12">
                                 <asp:TextBox runat="server" ID="t_id_usuario" CssClass="form-control" Style="margin-bottom: 10px;"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="El campo es obligatorio" ForeColor="red" ControlToValidate="t_id_usuario" Display="Dynamic"
                                     ValidationGroup="add"> </asp:RequiredFieldValidator>                                
                             </div>
                             <div class="input-group-prepend text-center">
                                     <asp:Button runat="server" ID="idbuscar" ValidationGroup="add" ToolTip="Ingrese Nombre para Buscar" CssClass="btn btn-lg btn-info " OnClick="idbuscar_Click"  Text="Buscar" />
-                                    <asp:Button runat="server" ID="idEdit" ValidationGroup="add" ToolTip="Ingresar Id para Editar" CssClass="btn btn-lg btn-warning " OnClick="idEdit_Click"  Text="Editar" />
+                                    <asp:Button runat="server" ID="idEdit" ValidationGroup="add2"  ToolTip="Ingresar Id para Editar" CssClass="btn btn-lg btn-warning " OnClick="idEdit_Click"  Text="Editar" />
                                     <asp:Button runat="server" ID="idDelete" ValidationGroup="add" ToolTip="Ingrese Id para Eliminar" CssClass=" btn btn-lg btn-danger" OnClick="idDelete_Click"  Text="Eliminar" />
                              </div>
-                            <br />
-                            <asp:Panel ID="Alerta2" runat="server" Visible="false">
-                                <strong>
-                                    <asp:Label ID="lbAlerta2" runat="server" Text=""></asp:Label>
-                                </strong>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </asp:Panel>
-                            <div class="table-responsive text-center">
-                                <asp:GridView runat="server" ID="idtablatrabajador" OnRowCommand="idtablatrabajador_RowCommand" CssClass="table table-bordered table-condensed">
-                                    <HeaderStyle CssClass="btn-primary" />
+                            <br />                            
+                        </div>                        
+                        <div class="table-responsive text-center">
+                            <asp:GridView runat="server" ID="idtablatrabajador" OnRowCommand="idtablatrabajador_RowCommand" CssClass="table table-bordered table-condensed">
+                                <HeaderStyle CssClass="btn-primary" />
 
-                                    <Columns>
-                                    </Columns>
-                                    <EmptyDataTemplate>
-                                        <h4 class="text-primary"><strong>Buscar</strong>Usuario</h4>
-                                    </EmptyDataTemplate>
-                                </asp:GridView>
-                            </div>
+                                <Columns>
+                                </Columns>
+                                <EmptyDataTemplate>
+                                    <h4 class="text-primary"><strong>Buscar</strong>Usuario</h4>
+                                </EmptyDataTemplate>
+                            </asp:GridView>
                         </div>
                     </div>
                 </div>

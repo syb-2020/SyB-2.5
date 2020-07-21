@@ -1,4 +1,4 @@
-	create database almacen_avance2;
+create database almacen_avance2;
 use almacen_avance2;
 
 
@@ -62,15 +62,13 @@ create table Almacen(
 );
 create table Detalle_venta(
 	id_detalle int identity (1,1) primary key,
-	precio_venta int not null unique, 
+	precio_venta int not null, 
 	id_producto varchar (300) not null,
 	id_venta int not null,
-	id_almacen int not null,
 	id_tipo_pago int not null,
 	numero_cliente int not null,
 	foreign key(id_producto) references Producto(id_producto),
 	foreign key(id_venta) references Venta(id_venta),
-	foreign key(id_almacen) references Almacen(id_almacen),
 	foreign key (id_tipo_pago) references Tipo_pago(id_tipo_pago),
 	foreign key (numero_cliente) references Cliente(numero_cliente)
 );
@@ -101,7 +99,7 @@ insert Rol(nombre) values ('Administrador');
 insert Rol(nombre) values ('Trabajador');
 
 insert Usuario (email,clave,nombre,apellido,direccion,numero_telefonico,id_rol) values ('guille@gmail.cl','1234','Guillermo','Fuentes','23 norte 5 oriente D','990034265',1);
-insert Usuario (email,clave,nombre,apellido,direccion,id_rol) values ('mario@gmail.cl','1234','Mario','Garrido','Longavi','990880926',2);
+insert Usuario (email,clave,nombre,apellido,direccion,numero_telefonico,id_rol) values ('mario@gmail.cl','1234','Mario','Garrido','Longavi','990880926',2);
 
 insert Tipo_pago (descripcion) values ('Efectivo');
 insert Tipo_pago (descripcion) values ('Credito');

@@ -70,7 +70,7 @@
                }
            }
        </style>
-    <!--Primer Grafico-->
+   <!--Primer Grafico-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
         google.charts.load("current", { packages: ["corechart"] });
@@ -78,15 +78,15 @@
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
                 ['Task', 'Hours per Day'],
-                ['Work', 11],
-                ['Eat', 2],
-                ['Commute', 2],
-                ['Watch TV', 2],
-                ['Sleep', 7]
+                ['Bebidas', 11],
+                ['Cecinas', 6],
+                ['Aseo', 4],
+                ['Frutas y Verduras', 9],
+                ['Pan', 7]
             ]);
 
             var options = {
-                title: 'My Daily Activities',
+                title: 'Principales productos vendidos en el almacén',
                 is3D: true,
             };
 
@@ -104,12 +104,12 @@
 
         function drawStuff() {
             var data = new google.visualization.arrayToDataTable([
-                ['Opening Move', 'Percentage'],
-                ["King's pawn (e4)", 44],
-                ["Queen's pawn (d4)", 31],
-                ["Knight to King 3 (Nf3)", 12],
-                ["Queen's bishop pawn (c4)", 10],
-                ['Other', 3]
+                ['Día', 'Cantidad de ventas'],
+                ["Lunes", 44],
+                ["Martes", 22],
+                ["Miércoles", 26],
+                ["Jueves", 37],
+                ['Viernes', 48]
             ]);
 
             var options = {
@@ -117,13 +117,13 @@
                 width: 900,
                 legend: { position: 'none' },
                 chart: {
-                    title: 'Chess opening moves',
-                    subtitle: 'popularity by percentage'
+                    title: 'Cantidad de ventas por día',
+                    subtitle: ''
                 },
                 bars: 'horizontal', // Required for Material Bar Charts.
                 axes: {
                     x: {
-                        0: { side: 'top', label: 'Percentage' } // Top x-axis.
+                        0: { side: 'top', label: 'Cantidad de ventas' } // Top x-axis.
                     }
                 },
                 bar: { groupWidth: "90%" }
@@ -166,9 +166,9 @@
             ]);
 
             var options = {
-                title: 'Motivation Level Throughout the Day',
+                title: 'Nivel de motivación de los trabajadores a través del día',
                 hAxis: {
-                    title: 'Time of Day',
+                    title: 'Hora del día',
                     format: 'h:mm a',
                     viewWindow: {
                         min: [7, 30, 0],
@@ -176,7 +176,7 @@
                     }
                 },
                 vAxis: {
-                    title: 'Rating (scale of 1-10)'
+                    title: 'Clasificación (escala de 1-10)'
                 }
             };
 
@@ -195,26 +195,26 @@
         function drawBasic() {
 
             var data = new google.visualization.DataTable();
-            data.addColumn('timeofday', 'Time of Day');
-            data.addColumn('number', 'Motivation Level');
+            data.addColumn('timeofday', 'Hora del día');
+            data.addColumn('number', 'Cantidad de ventas');
 
             data.addRows([
-                [{ v: [8, 0, 0], f: '8 am' }, 1],
-                [{ v: [9, 0, 0], f: '9 am' }, 2],
-                [{ v: [10, 0, 0], f: '10 am' }, 3],
+                [{ v: [8, 0, 0], f: '8 am' }, 7],
+                [{ v: [9, 0, 0], f: '9 am' }, 5],
+                [{ v: [10, 0, 0], f: '10 am' }, 4],
                 [{ v: [11, 0, 0], f: '11 am' }, 4],
-                [{ v: [12, 0, 0], f: '12 pm' }, 5],
+                [{ v: [12, 0, 0], f: '12 am' }, 8],
                 [{ v: [13, 0, 0], f: '1 pm' }, 6],
                 [{ v: [14, 0, 0], f: '2 pm' }, 7],
-                [{ v: [15, 0, 0], f: '3 pm' }, 8],
-                [{ v: [16, 0, 0], f: '4 pm' }, 9],
-                [{ v: [17, 0, 0], f: '5 pm' }, 10],
+                [{ v: [15, 0, 0], f: '3 pm' }, 9],
+                [{ v: [16, 0, 0], f: '4 pm' }, 10],
+                [{ v: [17, 0, 0], f: '5 pm' }, 8],
             ]);
 
             var options = {
-                title: 'Motivation Level Throughout the Day',
+                title: 'Cantidad de ventas en el día',
                 hAxis: {
-                    title: 'Time of Day',
+                    title: 'Hora del día',
                     format: 'h:mm a',
                     viewWindow: {
                         min: [7, 30, 0],
@@ -222,7 +222,7 @@
                     }
                 },
                 vAxis: {
-                    title: 'Rating (scale of 1-10)'
+                    title: 'Cantidad de ventas'
                 }
             };
 
@@ -428,7 +428,7 @@
                     <div class="box-header with-border">
                         <i class="fa fa-bar-chart-o"></i>
 
-                        <h3 class="box-title">Resumen de venta Diario</h3>
+                        <h3 class="box-title">Categorías de productos más vendidos en el almacén</h3>
 
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -457,7 +457,7 @@
                     <div class="box-header with-border">
                         <i class="fa fa-bar-chart-o"></i>
 
-                        <h3 class="box-title">Resumen de venta Diario</h3>
+                        <h3 class="box-title">Nivel de motivación de los trabajadores</h3>
 
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -486,7 +486,7 @@
                     <div class="box-header with-border">
                         <i class="fa fa-bar-chart-o"></i>
 
-                        <h3 class="box-title">Resumen de Ventas por mes</h3>
+                        <h3 class="box-title">Resumen de Ventas por día</h3>
 
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -544,7 +544,7 @@
                     <div class="box-header with-border">
                         <i class="fa fa-bar-chart-o"></i>
 
-                        <h3 class="box-title">Resumen de venta Diario</h3>
+                        <h3 class="box-title">Por Definir</h3>
 
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -572,8 +572,6 @@
         
         </div>
     </div>
-    
-
 
   <!-- Add the sidebar's background. This div must be placed
  
