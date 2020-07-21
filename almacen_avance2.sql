@@ -86,7 +86,7 @@ create table Camaras(
 create table Reportes(
 	id_reporte int identity (1,1) primary key,
 	fecha datetime Default Getdate(),
-	descripción varchar(8000),
+	descripciÃ³n varchar(8000),
 	id_usuario int not null,
 	id_venta int not null,
 	id_almacen int not null,
