@@ -4572,6 +4572,7 @@
       <DependentUpon>Usuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrador\Metodos\IniciarSesion.cs" />
+    <Compile Include="Views\Administrador\Metodos\MetodoGenerarVenta.cs" />
     <Compile Include="Views\Administrador\Metodos\MetodoProducto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

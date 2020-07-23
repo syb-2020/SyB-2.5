@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Almacen2._0.Models;
-using Almacen2._0.Views.Administrador.Metodos;
+
 
 namespace Almacen2._0.Pagina
 {
@@ -99,5 +99,6 @@ namespace Almacen2._0.Pagina
 
         }
         
-    }
+    }   
+   
 }
