@@ -30,6 +30,7 @@ namespace Almacen2._0.Models
         public string direccion { get; set; }
         public string numero_telefonico { get; set; }
         public int id_rol { get; set; }
+        public string estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Camaras> Camaras { get; set; }

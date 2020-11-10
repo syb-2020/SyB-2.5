@@ -20,7 +20,14 @@
   <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css"/>
   <!-- iCheck -->
   <link rel="stylesheet" href="../../plugins/iCheck/square/blue.css"/>
-   
+
+
+    <!--Cargamos el Script para las Alertas-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+    
     <!-- estilos de animación banner-->
         <link rel="stylesheet" type="text/css" href="../../bower_components/Style.css"/>
 
@@ -83,7 +90,7 @@
               <!-- /.col -->
               
               <div class="col-xs-4">                                                         
-                  <asp:Button ValidationGroup="iniciar" ID="inicio" OnClick="inicio_Click" runat="server" class="btn btn-primary btn-block btn-flat" Text="Entrar" />
+                  <asp:Button ValidationGroup="iniciar" ID="inicio" OnClick="inicio_Click" runat="server" class="btn btn-primary btn-block btn-flat" Text="Entrar" />                   
               </div>
               <!-- /.col -->
           </div>
@@ -114,8 +121,9 @@
   </div>
   <!-- /.login-box-body -->
 </div>
-<!-- /.login-box -->
 
+<!-- /.login-box -->
+    
 <!-- jQuery 3 -->
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
@@ -129,8 +137,8 @@
             radioClass: 'iradio_square-blue',
             increaseArea: '20%' /* optional */
         });
-    });
-</script>
+    });   
+</script>   
 </body>
 </html>
 

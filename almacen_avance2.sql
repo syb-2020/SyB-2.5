@@ -95,6 +95,13 @@ create table Reportes(
 	foreign key (id_almacen) references Almacen(id_almacen)
 );
 
+create table Categoria (
+id_categoria int identity (1,1) primary key not null,
+nombre varchar (100) not null,
+descripcion varchar (100) not null,
+estado varchar (100) not null
+);
+
 insert Rol(nombre) values ('Administrador');
 insert Rol(nombre) values ('Trabajador');
 

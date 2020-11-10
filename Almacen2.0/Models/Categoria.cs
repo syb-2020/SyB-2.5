@@ -12,24 +12,20 @@ namespace Almacen2._0.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Producto
+    public partial class Categoria
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Producto()
+        public Categoria()
         {
-            this.Detalle_venta = new HashSet<Detalle_venta>();
+            this.Producto = new HashSet<Producto>();
         }
     
-        public string id_producto { get; set; }
+        public int id_categoria { get; set; }
         public string nombre { get; set; }
-        public int precio { get; set; }
-        public int stock { get; set; }
         public string descripcion { get; set; }
         public string estado { get; set; }
-        public Nullable<int> id_categoria { get; set; }
     
-        public virtual Categoria Categoria { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Detalle_venta> Detalle_venta { get; set; }
+        public virtual ICollection<Producto> Producto { get; set; }
     }
 }

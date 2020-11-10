@@ -6,32 +6,33 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Almacen | Juanita</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.min.css" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../../bower_components/font-awesome/css/font-awesome.min.css" />
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="../../../bower_components/Ionicons/css/ionicons.min.css" />
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../../../dist/css/AdminLTE.min.css" />
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../../bower_components/font-awesome/css/font-awesome.min.css"/>
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../../../bower_components/Ionicons/css/ionicons.min.css"/>
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../../dist/css/AdminLTE.min.css"/>
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="../../../dist/css/skins/_all-skins.min.css" />
-    <!-- Morris chart -->
-    <link rel="stylesheet" href="../../../bower_components/morris.js/morris.css" />
-    <!-- jvectormap -->
-    <link rel="stylesheet" href="../../../bower_components/jvectormap/jquery-jvectormap.css" />
-    <!-- Date Picker -->
-    <link rel="stylesheet" href="../../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="../../../bower_components/bootstrap-daterangepicker/daterangepicker.css" />
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="../../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" />
+  <link rel="stylesheet" href="../../../dist/css/skins/_all-skins.min.css"/>
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="../../../bower_components/morris.js/morris.css"/>
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="../../../bower_components/jvectormap/jquery-jvectormap.css"/>
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="../../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"/>
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="../../../bower_components/bootstrap-daterangepicker/daterangepicker.css"/>
+    <link rel="stylesheet" href="../../../bower_components/Style.css"/>
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="../../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"/>
 
      <!-- estilos de animación banner-->
-        <link rel="stylesheet" type="text/css" href="../../bower_components/Style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../bower_components/Style.css"/>
     <style>         
            .gear {
                float: left;
@@ -295,7 +296,8 @@
     <div class="content">
         <div class="row" style="margin-right: 0px; margin-left: 0px;">
 
-            <div class="col-md-4">
+            <div class="col-md-12">
+                <div class="col-md-4">
 
                 <!-- Profile Image -->
                 <div class="box box-primary" style="border: 1px solid rgba(31, 45, 65, 0.125);">
@@ -390,7 +392,7 @@
                             <Columns>
                                 <asp:TemplateField HeaderText="Eliminar" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
-                                        <asp:ImageButton ID="imgEliminar" runat="server" CommandName="Delete" ImageUrl="../../imagenes/delete.png" Width="24px" Height="24px" />
+                                        <asp:ImageButton ID="imgEliminar" runat="server" CommandName="Delete" ImageUrl="../../../Img/delete.png" Width="24px" Height="24px" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Nombre Archivo">
@@ -403,8 +405,8 @@
                                 <asp:BoundField DataField="Length" HeaderText="Tamaño" />
                                 <asp:TemplateField HeaderText="Descargar" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
-                                        <asp:HyperLink ID="descarga" runat="server" NavigateUrl='<%# Eval("Name", "~/GuardarEnCarpeta/Download.aspx?filename={0}") %>'>
-                               <img src="../../imagenes/download.gif" alt=""  style="border-width:0px; width:30px; height:30px" />
+                                        <asp:HyperLink ID="descarga" runat="server" NavigateUrl='<%# Eval("Name", "~/Views/Administrador/Componentes/Download.aspx?filename={0}") %>'>
+                               <img src="../../../Img/download.gif" alt=""  style="border-width:0px; width:30px; height:30px" />
                                         </asp:HyperLink>
                                     </ItemTemplate>
                                 </asp:TemplateField>
@@ -419,6 +421,7 @@
 
                     </div>
                 </div>
+            </div>
             </div>
 
             <%-- Primer grafico --%>
@@ -578,27 +581,6 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery 3 -->
-<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- FastClick -->
-<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
-<!-- FLOT CHARTS -->
-<script src="../../bower_components/Flot/jquery.flot.js"></script>
-<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="../../bower_components/Flot/jquery.flot.resize.js"></script>
-<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="../../bower_components/Flot/jquery.flot.pie.js"></script>
-<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-<script src="../../bower_components/Flot/jquery.flot.categories.js"></script>
-<!-- Page script -->
-
-        <!-- ./col -->
 
 
 <!-- ./wrapper -->

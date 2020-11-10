@@ -27,12 +27,14 @@ namespace Almacen2._0.Models
     
         public virtual DbSet<Almacen> Almacen { get; set; }
         public virtual DbSet<Camaras> Camaras { get; set; }
+        public virtual DbSet<Categoria> Categoria { get; set; }
         public virtual DbSet<Cliente> Cliente { get; set; }
         public virtual DbSet<Detalle_venta> Detalle_venta { get; set; }
         public virtual DbSet<Pago> Pago { get; set; }
         public virtual DbSet<Producto> Producto { get; set; }
         public virtual DbSet<Reportes> Reportes { get; set; }
         public virtual DbSet<Rol> Rol { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tipo_pago> Tipo_pago { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Venta> Venta { get; set; }

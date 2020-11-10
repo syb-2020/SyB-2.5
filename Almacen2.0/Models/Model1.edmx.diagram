@@ -4,21 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d680822046754f8ca6933dace9b25a58" Name="Diagram1">
+      <Diagram DiagramId="c37cc8bd7e4f469da6e4315642f173dc" Name="Diagram1">
         <EntityTypeShape EntityType="almacen_avance2Model.Almacen" Width="1.5" PointX="8.25" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="almacen_avance2Model.Camaras" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="almacen_avance2Model.Categoria" Width="1.5" PointX="1.5" PointY="16.875" IsExpanded="true" />
         <EntityTypeShape EntityType="almacen_avance2Model.Cliente" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="almacen_avance2Model.Detalle_venta" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="almacen_avance2Model.Pago" Width="1.5" PointX="6" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="almacen_avance2Model.Producto" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
         <EntityTypeShape EntityType="almacen_avance2Model.Reportes" Width="1.5" PointX="10.5" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="almacen_avance2Model.Rol" Width="1.5" PointX="3.75" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="almacen_avance2Model.Tipo_pago" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="almacen_avance2Model.sysdiagrams" Width="1.5" PointX="2.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="almacen_avance2Model.Tipo_pago" Width="1.5" PointX="0.75" PointY="20" IsExpanded="true" />
         <EntityTypeShape EntityType="almacen_avance2Model.Usuario" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="almacen_avance2Model.Venta" Width="1.5" PointX="8.25" PointY="7.375" IsExpanded="true" />
         <AssociationConnector Association="almacen_avance2Model.FK__Reportes__id_alm__4E88ABD4" ManuallyRouted="false" />
         <AssociationConnector Association="almacen_avance2Model.FK__Camaras__id_rol__48CFD27E" ManuallyRouted="false" />
         <AssociationConnector Association="almacen_avance2Model.FK__Camaras__id_usua__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="almacen_avance2Model.FK__Producto__id_cat__70DDC3D8" ManuallyRouted="false" />
         <AssociationConnector Association="almacen_avance2Model.FK__Detalle_v__numer__440B1D61" ManuallyRouted="false" />
         <AssociationConnector Association="almacen_avance2Model.FK__Pago__numero_cli__300424B4" ManuallyRouted="false" />
         <AssociationConnector Association="almacen_avance2Model.FK__Venta__numero_cl__34C8D9D1" ManuallyRouted="false" />

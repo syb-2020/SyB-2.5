@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Almacen2._0.Pagina {
-    
-    
-    public partial class Login {
-        
+namespace Almacen2._0.Pagina
+{
+
+
+    public partial class Login
+    {
+
         /// <summary>
         /// Control form2.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Almacen2._0.Pagina {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form2;
-        
+
         /// <summary>
         /// Control txtemail.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Almacen2._0.Pagina {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtemail;
-        
+
         /// <summary>
         /// Control RequiredFieldValidator1.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Almacen2._0.Pagina {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
+
         /// <summary>
         /// Control txtpassword.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Almacen2._0.Pagina {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtpassword;
-        
+
         /// <summary>
         /// Control RequiredFieldValidator2.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Almacen2._0.Pagina {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-        
+
         /// <summary>
         /// Control inicio.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Almacen2._0.Pagina {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button inicio;
-        
+
         /// <summary>
         /// Control panel_mensaje.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Almacen2._0.Pagina {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel panel_mensaje;
-        
+
         /// <summary>
         /// Control lbmensaje.
         /// </summary>

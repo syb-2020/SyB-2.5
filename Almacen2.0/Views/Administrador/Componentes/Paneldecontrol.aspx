@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="../../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"/>
 
      <!-- estilos de animación banner-->
-        <link rel="stylesheet" type="text/css" href="../../bower_components/Style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../bower_components/Style.css"/>
      <link rel="icon" type="favicon/x-icon" />
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -97,6 +97,20 @@
                         <i class="glyphicon glyphicon-home"></i>
                     </div>
                     <a href="Productos.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+             <div class="col-md-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3></h3>
+
+                        <p>Categorias</p>
+                    </div>
+                    <div class="icon">
+                        <i class="glyphicon glyphicon-home"></i>
+                    </div>
+                    <a href="Categorias.aspx" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->

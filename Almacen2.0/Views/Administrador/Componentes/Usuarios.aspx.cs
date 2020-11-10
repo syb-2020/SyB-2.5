@@ -46,7 +46,8 @@ namespace Almacen2._0.Views.Administrador.Componentes
                     apellido = tapellido.Text,
                     direccion = tdireccion.Text,
                     numero_telefonico =ttelefono.Text,
-                    id_rol = Convert.ToInt32(idrol.SelectedItem.Value)
+                    id_rol = Convert.ToInt32(idrol.SelectedItem.Value),
+                    estado = "activo"
                 };
 
                 context.Usuario.Add(nuevo);
@@ -154,7 +155,59 @@ namespace Almacen2._0.Views.Administrador.Componentes
 
         protected void idtablatrabajador_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            
+            int filaSeleccionada = Convert.ToInt32(e.CommandArgument);
+            if (e.CommandName == "IdVer")
+            {
+             
+                string estado = "";
+                int id_user;
+                int.TryParse(idtablatrabajador.Rows[filaSeleccionada].Cells[1].Text, out id_user);
+              
+               
+
+
+
+                Usuario users = new Usuario();
+                users = context.Usuario.Find(id_user);              
+
+                if (users.estado == "activo" )
+                {
+                    users.estado = "inactivo";
+
+                    context.SaveChanges();
+                    mensajeAlertaSuccess(true, "Estado Cambiado");
+
+                    var listNombre = from litpr in context.Usuario
+                                     where litpr.id_usuario.Equals(users.id_usuario)
+                                     select litpr;
+
+                    idtablatrabajador.DataSource = listNombre.ToList();
+                    idtablatrabajador.DataBind();
+
+                   
+                }
+                else if (users.estado == "inactivo")
+                {
+                    users.estado = "activo";
+                    context.SaveChanges();
+                    mensajeAlertaSuccess(true, "Estado Cambiado");
+
+                
+
+                    var listNombre = from litpr in context.Usuario
+                                     where litpr.id_usuario.Equals(users.id_usuario)
+                                     select litpr;
+
+                    idtablatrabajador.DataSource = listNombre.ToList();
+                    idtablatrabajador.DataBind();
+
+                    
+                }
+                //ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script> swal('Exito!', 'Producto Seleccionado!', 'success'); </script>");
+                //ScriptManager.RegisterStartupScript(this, typeof(string), "Error", "<script> swal('Exito!', 'Producto Seleccionado!', 'success'); </script>", true);
+
+                
+            }
         }
     }
 }

@@ -23,6 +23,15 @@
           <Property Name="id_usuario" Type="int" Nullable="false" />
           <Property Name="id_rol" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="id_categoria" />
+          </Key>
+          <Property Name="id_categoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
         <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="numero_cliente" />
@@ -58,6 +67,9 @@
           <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="precio" Type="int" Nullable="false" />
           <Property Name="stock" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="estado" Type="varchar" MaxLength="100" />
+          <Property Name="id_categoria" Type="int" />
         </EntityType>
         <EntityType Name="Reportes">
           <Key>
@@ -76,6 +88,16 @@
           </Key>
           <Property Name="id_rol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Tipo_pago">
           <Key>
@@ -96,6 +118,7 @@
           <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="numero_telefonico" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="id_rol" Type="int" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Venta">
           <Key>
@@ -203,6 +226,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Producto__id_cat__70DDC3D8">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
+          <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="id_categoria" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Reportes__id_alm__4E88ABD4">
           <End Role="Almacen" Type="Self.Almacen" Multiplicity="1" />
           <End Role="Reportes" Type="Self.Reportes" Multiplicity="*" />
@@ -290,12 +325,14 @@
         <EntityContainer Name="almacen_avance2ModelStoreContainer">
           <EntitySet Name="Almacen" EntityType="Self.Almacen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Camaras" EntityType="Self.Camaras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Detalle_venta" EntityType="Self.Detalle_venta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pago" EntityType="Self.Pago" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reportes" EntityType="Self.Reportes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tipo_pago" EntityType="Self.Tipo_pago" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
@@ -330,6 +367,10 @@
           <AssociationSet Name="FK__Pago__numero_cli__300424B4" Association="Self.FK__Pago__numero_cli__300424B4">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Pago" EntitySet="Pago" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Producto__id_cat__70DDC3D8" Association="Self.FK__Producto__id_cat__70DDC3D8">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
           <AssociationSet Name="FK__Reportes__id_alm__4E88ABD4" Association="Self.FK__Reportes__id_alm__4E88ABD4">
             <End Role="Almacen" EntitySet="Almacen" />
@@ -386,6 +427,16 @@
           <NavigationProperty Name="Rol" Relationship="Self.FK__Camaras__id_rol__48CFD27E" FromRole="Camaras" ToRole="Rol" />
           <NavigationProperty Name="Usuario" Relationship="Self.FK__Camaras__id_usua__47DBAE45" FromRole="Camaras" ToRole="Usuario" />
         </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="id_categoria" />
+          </Key>
+          <Property Name="id_categoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__Producto__id_cat__70DDC3D8" FromRole="Categoria" ToRole="Producto" />
+        </EntityType>
         <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="numero_cliente" />
@@ -431,6 +482,10 @@
           <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="precio" Type="Int32" Nullable="false" />
           <Property Name="stock" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="id_categoria" Type="Int32" />
+          <NavigationProperty Name="Categoria" Relationship="Self.FK__Producto__id_cat__70DDC3D8" FromRole="Producto" ToRole="Categoria" />
           <NavigationProperty Name="Detalle_venta" Relationship="Self.FK__Detalle_v__id_pr__412EB0B6" FromRole="Producto" ToRole="Detalle_venta" />
         </EntityType>
         <EntityType Name="Reportes">
@@ -456,6 +511,16 @@
           <NavigationProperty Name="Camaras" Relationship="Self.FK__Camaras__id_rol__48CFD27E" FromRole="Rol" ToRole="Camaras" />
           <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__id_rol__286302EC" FromRole="Rol" ToRole="Usuario" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="Tipo_pago">
           <Key>
             <PropertyRef Name="id_tipo_pago" />
@@ -477,6 +542,7 @@
           <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="numero_telefonico" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="id_rol" Type="Int32" Nullable="false" />
+          <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Camaras" Relationship="Self.FK__Camaras__id_usua__47DBAE45" FromRole="Usuario" ToRole="Camaras" />
           <NavigationProperty Name="Reportes" Relationship="Self.FK__Reportes__id_usu__4CA06362" FromRole="Usuario" ToRole="Reportes" />
           <NavigationProperty Name="Rol" Relationship="Self.FK__Usuario__id_rol__286302EC" FromRole="Usuario" ToRole="Rol" />
@@ -530,6 +596,18 @@
             </Principal>
             <Dependent Role="Camaras">
               <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Producto__id_cat__70DDC3D8">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
+          <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="id_categoria" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="id_categoria" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -680,12 +758,14 @@
         <EntityContainer Name="almacen_avance2Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Almacen" EntityType="Self.Almacen" />
           <EntitySet Name="Camaras" EntityType="Self.Camaras" />
+          <EntitySet Name="Categoria" EntityType="Self.Categoria" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" />
           <EntitySet Name="Detalle_venta" EntityType="Self.Detalle_venta" />
           <EntitySet Name="Pago" EntityType="Self.Pago" />
           <EntitySet Name="Producto" EntityType="Self.Producto" />
           <EntitySet Name="Reportes" EntityType="Self.Reportes" />
           <EntitySet Name="Rol" EntityType="Self.Rol" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Tipo_pago" EntityType="Self.Tipo_pago" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
           <EntitySet Name="Venta" EntityType="Self.Venta" />
@@ -700,6 +780,10 @@
           <AssociationSet Name="FK__Camaras__id_usua__47DBAE45" Association="Self.FK__Camaras__id_usua__47DBAE45">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Camaras" EntitySet="Camaras" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Producto__id_cat__70DDC3D8" Association="Self.FK__Producto__id_cat__70DDC3D8">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
           <AssociationSet Name="FK__Detalle_v__numer__440B1D61" Association="Self.FK__Detalle_v__numer__440B1D61">
             <End Role="Cliente" EntitySet="Cliente" />
@@ -776,6 +860,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Categoria">
+            <EntityTypeMapping TypeName="almacen_avance2Model.Categoria">
+              <MappingFragment StoreEntitySet="Categoria">
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Cliente">
             <EntityTypeMapping TypeName="almacen_avance2Model.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
@@ -813,6 +907,9 @@
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="precio" ColumnName="precio" />
                 <ScalarProperty Name="stock" ColumnName="stock" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -836,6 +933,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="almacen_avance2Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Tipo_pago">
             <EntityTypeMapping TypeName="almacen_avance2Model.Tipo_pago">
               <MappingFragment StoreEntitySet="Tipo_pago">
@@ -855,6 +963,7 @@
                 <ScalarProperty Name="direccion" ColumnName="direccion" />
                 <ScalarProperty Name="numero_telefonico" ColumnName="numero_telefonico" />
                 <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

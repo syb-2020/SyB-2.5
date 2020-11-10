@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="../../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"/>
 
      <!-- estilos de animación banner-->
-        <link rel="stylesheet" type="text/css" href="../../bower_components/Style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../bower_components/Style.css"/>
     <style>         
            .gear {
                float: left;

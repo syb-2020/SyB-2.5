@@ -29,7 +29,7 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="../../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"/>
      <!-- estilos de animación banner-->
-        <link rel="stylesheet" type="text/css" href="../../bower_components/Style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../bower_components/Style.css"/>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -197,6 +197,8 @@
                                 <HeaderStyle CssClass="btn-primary" />
 
                                 <Columns>
+                                    <asp:ButtonField HeaderStyle-CssClass="text-center"  ControlStyle-CssClass="btn btn-success "
+                                    ButtonType="Link" CommandName="IdVer" Text="" ControlStyle-BackColor="red" HeaderText="Cambiar Estado" />                                    
                                 </Columns>
                                 <EmptyDataTemplate>
                                     <h4 class="text-primary"><strong>Buscar</strong>Usuario</h4>
@@ -208,5 +210,5 @@
             </div>
         </div>
     </div>
- 
+
 </asp:Content>

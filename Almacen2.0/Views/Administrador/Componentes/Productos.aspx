@@ -5,6 +5,9 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Almacen | Juanita</title>
+     <!--Cargamos el Script para las Alertas-->
+
+
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
     <!-- Bootstrap 3.3.7 -->
@@ -31,8 +34,14 @@
     <link rel="stylesheet" href="../../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" />
     <link href="../../../Content/estyle.css" rel="stylesheet" />
 
+        <!--Cargamos el Script para las Alertas-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+
     <!-- estilos de animación banner-->
-        <link rel="stylesheet" type="text/css" href="../../bower_components/Style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../bower_components/Style.css"/>
     <style>  
             .msg {
                     position: relative;
@@ -84,6 +93,8 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+
+    
 
     <!-- Google Font -->
     <link rel="stylesheet"
@@ -151,6 +162,18 @@
                                     ValidationGroup="add2"> </asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Ingrese solo numeros" ForeColor="red" Display="Dynamic" ControlToValidate="tstockproducto" ValidationExpression="^[0-9]+$" ValidationGroup="add2"></asp:RegularExpressionValidator>
                             </div>
+                            <div class="form-group">
+                                <label for="tdescripcion">Descripcion: </label>
+                                <asp:TextBox runat="server" ID="tdescripcion" CssClass="form-control"
+                                    placeholder="Descripcion"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="El campo es obligatorio" ForeColor="red" ControlToValidate="tdescripcion" Display="Dynamic"
+                                    ValidationGroup="add2"> </asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator12" runat="server" ErrorMessage="Ingrese solo letras" ForeColor="red" Display="Dynamic" ControlToValidate="tdescripcion" ValidationExpression="^[a-zA-Z\s]+$" ValidationGroup="add2"></asp:RegularExpressionValidator>
+                            </div>     
+                             <div class="form-group">
+                                <label for="idcategoria">Categoria</label>
+                                <asp:DropDownList runat="server" ID="idcategoria" CssClass="form-control" DataTextField="nombre" DataValueField="id_categoria"></asp:DropDownList>
+                            </div>
                             <asp:Button runat="server" ID="idaddproducto" ValidationGroup="add2" OnClick="idaddproducto_Click"
                                 CssClass="btn btn-lg btn-success center-block"  Text="Agregar Producto" />                            
                         </div>
@@ -179,7 +202,7 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="El campo es obligatorio" ForeColor="red" ControlToValidate="txtDesc" Display="Dynamic"
                                     ValidationGroup="add3"> </asp:RequiredFieldValidator>
                         </div>
-                        <asp:Button ID="btnBuscar" CssClass="btn btn-lg btn-success center-block" ValidationGroup="add3" runat="server" Text="Buscar"
+                        <asp:Button ID="btnBuscar" CssClass="btn btn-lg btn-info     center-block" ValidationGroup="add3" runat="server" Text="Buscar"
                             OnClick="btnBuscar_Click" />
                         
                         <div class="col-md-5">                           
@@ -188,7 +211,7 @@
                     </div>
                 </div>
             </div>
-
+            
 
             <div class="col-md-12">               
                 <!-- Profile Image -->
@@ -203,10 +226,12 @@
                             <Columns>
                                 <asp:BoundField HeaderStyle-CssClass="text-center" Visible="false" DataField="id_producto"
                                     HeaderText="Id" />
-                                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="nombre" HeaderText="Nombre" />
+                                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="nombre" HeaderText="Nombre" />                                 
                                 <asp:BoundField HeaderStyle-CssClass="text-center" DataField="precio" DataFormatString="${0:N0}"
                                     HeaderText="Precio" />
-                                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="stock" HeaderText="Stock" />
+                                <asp:BoundField HeaderStyle-CssClass="text-center" DataField="stock" HeaderText="Stock" />                             
+                                <asp:BoundField HeaderStyle-CssClass="text-center" ItemStyle-BackColor="#009933" ItemStyle-ForeColor="white" DataField="estado" HeaderText="Estado" />
+                                 
                                 <asp:ButtonField HeaderStyle-CssClass="text-center " ControlStyle-CssClass="btn btn-success "
                                     ButtonType="Link" CommandName="IdVer" Text="Seleccionar" HeaderText="Ver Producto" />
                                 <asp:ButtonField HeaderStyle-CssClass="text-center" ControlStyle-CssClass="btn btn-danger"
@@ -233,5 +258,6 @@
         <!-- /.row -->
 
     </section>    
-
+    
 </asp:Content>
+

@@ -30,22 +30,22 @@ namespace Almacen2._0.Pagina
 
                 var result = from c in context.Usuario
                              where c.clave.Equals(clave) && c.email.Equals(email)
-                             select new { c.id_rol, c.id_usuario, c.nombre, c.apellido };
-
-                //var result = new IniciarSesion().buscarUsuario(email,clave);
+                             select new { c.id_rol, c.id_usuario, c.nombre, c.apellido, c.estado };
+             
 
                 if (result.ToList().Count ==0 )
                 {
-                    panel_mensaje.Visible = true;
-                    panel_mensaje.CssClass = "alert alert-danger";
-                    lbmensaje.Text = "Usuario no valido";                                   
+                    //panel_mensaje.Visible = true;
+                    //panel_mensaje.CssClass = "alert alert-danger";
+                    //lbmensaje.Text = "Usuario no valido";
+                    ClientScript.RegisterStartupScript(this.GetType(),"msg", "<script> swal('Error!', 'Usuario no valido!', 'error'); </script>");
                 }
                 else
-                {
-                    //int test2 = new IniciarSesion().validacion(2);
+                {                   
 
                     int usuario_rol = result.ToList()[0].id_rol;
                     int usuario_id = result.ToList()[0].id_usuario;
+                    string estado = result.ToList()[0].estado;
                     string nombre5 = result.ToList()[0].nombre;
                     string apellido = result.ToList()[0].apellido;
 
@@ -74,15 +74,23 @@ namespace Almacen2._0.Pagina
                     
                                         
 
-                    if (usuario_rol == 1)
+                    if (usuario_rol == 1 && estado.Equals("activo"))
                     {                        
 
                         Response.Redirect("/Views/Administrador/Componentes/Paneldecontrol.aspx");
                     }
-                    if (usuario_rol == 2)
+                    else
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script> swal('Error!', 'Usuario inactivo, Contacte al administrador!', 'error'); </script>");
+                    }
+                    if (usuario_rol == 2 && estado.Equals("activo"))
                     {
 
                         Response.Redirect("/Views/Trabajador/Componentes/Paneldecontrol.aspx");
+                    }
+                    else
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script> swal('Error!', 'Usuario inactivo, Contacte al administrador!', 'error'); </script>");
                     }
                     
                     Session.Timeout = 30;

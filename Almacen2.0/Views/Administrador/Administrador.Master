@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Administrador.master.cs" Inherits="Almacen2._0.Views.Administrador.Administrador" %>
+﻿﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Administrador.master.cs" Inherits="Almacen2._0.Views.Administrador.Administrador" %>
 
 
 
@@ -96,9 +96,23 @@
                             <ul class="sidebar-menu" data-widget="tree">
                                 <li class="header" style="color: #fff; border-top: #fff 1px solid; border-bottom: #fff 1px solid">MENU</li>
 
-                                <li><a id="Productos" href="Productos.aspx"><i class="glyphicon glyphicon-home"></i><span>Productos</span></a></li>
+                                
+                                <li class="active treeview" style="height: auto;">
+                                    <a href="#">
+                                        <i class="fa fa-laptop"></i><span>Almacen</span>
+                                        <span class="pull-right-container">
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu" style="display: none;">
+                                        <li><a id="Productos" href="Productos.aspx"><i class="fa fa-edit"></i><span>Productos</span></a></li>
+                                         <li><a id="Categoria" href="Categorias.aspx"><i class="fa fa-edit"></i><span>Categorias</span></a></li>
+                                        <li><a id="Usuarios" href="Usuarios.aspx"><i class="fa fa-user-plus"></i><span>Usuarios</span></a></li>
+                                    </ul>
+                                </li>
+                               
                                 <li><a href="Reportes.aspx"><i class="glyphicon glyphicon-list-alt"></i><span>Reportes</span></a></li>
-                                <li><a id="Usuarios" href="Usuarios.aspx"><i class="glyphicon glyphicon-user"></i><span>Usuarios</span></a></li>
+                                
                                 <li><a href="Camaras.aspx"><i class="glyphicon glyphicon-facetime-video"></i><span>Camaras</span></a></li>
                                 <li><a id="Generar_Venta" href="Generarventa.aspx"><i class="glyphicon glyphicon-shopping-cart"></i><span>Generar Venta</span></a></li>
                                 <li><a href="Paneldecontrol.aspx"><i class="glyphicon glyphicon-th"></i><span>Panel de control</span></a></li>
@@ -152,6 +166,10 @@
                     <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
                     <div class="control-sidebar-bg"></div>
+                        <!--Cargamos el Script para las Alertas-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
 
                     <script>                       
@@ -203,13 +221,13 @@
 
 
                     <!-- FLOT CHARTS -->
-                    <script src="../../bower_components/Flot/jquery.flot.js"></script>
+                    <script src="../../../bower_components/Flot/jquery.flot.js"></script>
                     <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-                    <script src="../../bower_components/Flot/jquery.flot.resize.js"></script>
+                    <script src="../../../bower_components/Flot/jquery.flot.resize.js"></script>
                     <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-                    <script src="../../bower_components/Flot/jquery.flot.pie.js"></script>
+                    <script src="../../../bower_components/Flot/jquery.flot.pie.js"></script>
                     <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-                    <script src="../../bower_components/Flot/jquery.flot.categories.js"></script>
+                    <script src="../../../bower_components/Flot/jquery.flot.categories.js"></script>
             </ContentTemplate>
             <%--<Triggers>
           <asp:PostBackTrigger ControlID="btnSubirArchivo"  />

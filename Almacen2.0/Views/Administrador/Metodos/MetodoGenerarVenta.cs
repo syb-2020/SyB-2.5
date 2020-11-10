@@ -2,7 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Threading;
+
 
 namespace Almacen2._0.Views.Administrador.Metodos
 {
@@ -10,7 +11,7 @@ namespace Almacen2._0.Views.Administrador.Metodos
     {
 		bool resultBuscar = false;
 		bool resultDescuento = false;
-		bool resultAgregarVenta
+		bool resultAgregarVenta = false;
 		int total = 0;
 		List<Producto> carro = new List<Producto>();
 
@@ -116,14 +117,15 @@ namespace Almacen2._0.Views.Administrador.Metodos
 		static Venta nuevoVenta = new Venta();
 		static Detalle_venta nuevoDetalleVenta = new Detalle_venta();
 
-		public bool agregarVenta_Click(string nuCliente, string tipopago)
+		public bool agregarVenta_Click(int nuCliente, string tipopago)
 		{
-			int num_cliente = Convert.ToInt32(nuCliente);
+			int num_cliente = nuCliente;
 			int idpago = 0;
 			int num_venta = 0;
 
-			if (!string.IsNullOrEmpty(nuCliente))
-			{
+
+            if (!string.IsNullOrEmpty(tipopago))
+            {
 				string detalle = "";
 				foreach (var item2 in carro)
 				{
@@ -136,39 +138,34 @@ namespace Almacen2._0.Views.Administrador.Metodos
 					numero_cliente = num_cliente,
 					descripcion = detalle + "\r\n"
 				});
-
-				resultAgregarVenta = true;
-			}
-			else
-			{
-				resultAgregarVenta = false;
-			}
-
-
-			if (!string.IsNullOrEmpty(tipopago))
-			{
+				
 				List<Tipo_pago> tip = new List<Tipo_pago>();
-				tip.Add(new Tipo_pago
+				tip.Add(new Tipo_pago()
 				{
 					id_tipo_pago = 1,
 					descripcion = "Efectivo"
 				});
-				tip.Add(new Tipo_pago
+				tip.Add(new Tipo_pago()
 				{
 					id_tipo_pago = 2,
 					descripcion = "Debito"
 				});
 
 				var listTipopago = from litpr in tip
-								   where litpr.descripcion.Equals(tipopago)
-								   select new { idpago };
-				nuevoPago = new Pago
+								   where litpr.descripcion.StartsWith(tipopago)
+								   select litpr;
+
+				if (listTipopago.Count() != 0)
 				{
-					numero_cliente = num_cliente,
-					fecha = DateTime.Now,
-					id_tipo_pago = Convert.ToInt32(listTipopago)
-				};
-				idpago = Convert.ToInt32(listTipopago);
+					nuevoPago = new Pago
+					{
+						numero_cliente = nuCliente,
+						fecha = DateTime.Now,
+						id_tipo_pago = listTipopago.ToList()[0].id_tipo_pago
+					};
+
+					idpago = listTipopago.ToList()[0].id_tipo_pago;
+				}				
 
 				nuevoVenta = new Venta
 				{
@@ -189,19 +186,16 @@ namespace Almacen2._0.Views.Administrador.Metodos
 
 					nuevoDetalleVenta.id_tipo_pago = Convert.ToInt32(idpago);
 					nuevoDetalleVenta.numero_cliente = num_cliente;
-
-					resultAgregarVenta = true;
+					
 
 				}
-
 				resultAgregarVenta = true;
-
-			}
-			else
-			{
+            }
+            else
+            {
 				resultAgregarVenta = false;
-			}
-
+            }
+				
 			return resultAgregarVenta;
 		}
 	}
